@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> vhdl </title>
+    <link rel="stylesheet" href="../../PATTERN/stylePage.css"/> 
+</head>
+<body>
+    <header>
+        <h1> VHDL </h1>
+    </header>
+
+    <section>
+        <button class="accordion">  <span class="symbol"> + </span> Introduction </button>
+        <div class="panel">
+            <em> VHDL : </em> Very high speed integrated circuits Harware Description Language <br />
+            Ce language permet de faire de la description de hardware et de la simulation <br />
+            <br />
+            Dévellopé par le departement de la défense américaine pour +400 Mio$ <br />
+            en partenariat avec IBM, Texas et Intermetric <br />
+            <br />
+            <em>  Attention : VHDL est un language ne faisant pas la différence entre majuscule et minuscule </em>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les signaux  </button>
+        <div class="panel">
+            Pour pouvoir utiliser les signaux il faut commencer par importer la librairie correspondante :
+            <p class="code">
+                <em> library ieee; </em><br />
+                <em> use ieee.std_logic_1164.all; </em> <br />
+            </p>
+            Cette librairie contient deux signaux non signé intéressant :
+            <dl>
+                <dt> <em> std_logic </em></dt>
+                <dd> qui correspond à un signal de 1 bit </dd>
+                <dt> <em>std_logic_vector(</em> N-1 <em>downto</em> 0 <em>)</em></dt>
+                <dd> qui correspond à un bus de N bits, remplacer N-1 par un nombre</dd>
+            </dl>
+            Actions pour les std_logic :
+            <dl>
+                <dt> signalSimple <em>  <= </em> valeur <em> ; </em></dt>
+                <dd> affecter une valeur au signal de taille 1, la valeur peut etre '0', '1' ou la valeur d'un autre signal </dd>
+
+                <dt> signalSimple <em>= </em> valeur </dt>
+                <dd>
+                    comparaison de la valeur d'un bit, en comparaison a une valeur : '1', '0' ou un autre signal,
+                    renvoi un booléen
+                </dd>
+            </dl>
+            Actions pour les std_logic_vector :
+            <dl>
+                <dt> bitBus<em>(</em>n<em>)</em> </dt>
+                <dd> lire le bit à la position n du bus </dd>
+                <dt> bitBus <em><= "</em>011000<em>";</em> </dt>
+                <dd> affecter à l'aide d'une séquence binaire la valeur du bus de bit </dd>
+                <dt> bitBus <em> <= X"</em>451000<em>";</em></dt>
+                <dd>
+                    affecter à l'aide d'une séquence hexadécimal la valeur du bus de bit (attention que
+                    la taille match, chaque caractère hexadécimal correspond à 4 bit)
+                </dd>
+                <dt> bitBus <= X"451000"<em>&</em>"1011"<em>&</em>X"34";</dt>
+                <dd>
+                    utiliser un mélange de séquences hexa et binaire pour affecter la valeur au bus de bit
+                </dd>
+                <dt> bitBus <em><= (</em>specificPosition1 => valeur1<em>, OTHERS => </em> valeur2 <em>);</em></dt>
+                <dd>
+                    macro pour l'affectation
+                </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Les nombres </button>
+        <div class="panel">
+            While std_logic and std_logic_vector have no interpretation, other types exists : <br />
+            The numbers <br />
+            Pour pouvoir utiliser les nombres il faut commencer par importer la librairie correspondante :
+            <p class="code">
+                <em> library ieee; </em><br />
+                <em> use ieee.numeric_std.all; </em> <br />
+            </p>
+            Cette librairie contient deux définitions intéressantes :
+            <dl>
+                <dt> <em>unsigned(</em> N-1 <em>downto</em> 0<em>)</em></dt>
+                <dd> les nombres non signés, les binaires naturels </dd>
+                <dt> <em> signed(</em> N-1 <em>downto</em> 0<em>)</em></dt>
+                <dd> les nombres signés au format two's complement</dd>
+            </dl>
+            Pour créer des nombres à ce format, il existe deux macros :
+            <dl>
+                <dt> <em>to_unsigned(</em>entierRelatif<em>,</em> tailleEnBits<em>)</em></dt>
+                <dd> convertis l'entier relatif en usigned number avec la taille desirée de bits</dd>
+                <dt> <em> to_signed(</em>entierRelatif<em>,</em> tailleEnBits<em>)</em></dt>
+                <dd>  convertis l'entier relatif en signed number avec la taille desirée de bits</dd>
+            </dl>
+            Opération sur les nombres (<em>
+                le reste d'opérations existantes est unsafe, car pas toujours implémentable
+                sur le harware
+            </em>):
+            <dl>
+                <dt> <em>+</em> </dt>
+                <dd> addition </dd>
+                <dt> <em>-</em> </dt>
+                <dd>  soustraction </dd>
+                <dt> <em>></em> </dt>
+                <dd> renvoi un booléen, bigger then </dd>
+                <dt> <em>>=</em> </dt>
+                <dd> renvoi un booléen, bigger then or equals </dd>
+                <dt> <em><</em> </dt>
+                <dd> envoi un booléen, smaller then</dd>
+                <dt> <em>=<</em> </dt>
+                <dd> renvoi un booléen, smaller then or equals </dd>
+            </dl>
+        </div>
+
+
+        <button class="accordion">  <span class="symbol"> + </span> L'entité </button>
+        <div class="panel">
+            L'entité est la visualisation extérieur d'un composant, sous le format black box <br />
+            composé de ses entrées / sorties avec le monde extérieur et de son nom
+            <p class="code">
+                <em> Entity </em> nomEntite <em> is </em> <br />
+                <br />
+                &nbsp; <em> Port(</em>entreUne <em> : IN </em> typeEntrée; <br />
+                &nbsp; &nbsp; &nbsp; &nbsp;entreDeux <em> : IN </em> typeEntrée; <br />
+                &nbsp; &nbsp; &nbsp; &nbsp;entreTrois <em> : IN </em> typeEntrée; <br />
+                &nbsp; &nbsp; &nbsp; &nbsp;sortieUne <em> : OUT </em> typeSortie; <br />
+                &nbsp; &nbsp; &nbsp; &nbsp;sortieDeux <em> : OUT </em> typeSortie <em> ); </em> <br />
+                <br />
+                <em> End </em> nomEntite <em>;</em>
+            </p>
+            Le type d'entrée correspond à un type de signal
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> L'architecture  </button>
+        <div class="panel">
+            L'architecture correspond à la partie fonctionnelle d'un composant <br />
+            Un composant peu avoir différentes architectures/implémentations
+            <p class="code">
+                <em>Architecture</em> implementationName <em>of</em> nomEntity <em>is</em> <br />
+                &nbsp; -- Partie déclarative <br />
+                <em>Begin</em> <br />
+                &nbsp; -- Partie fonctionnelle <br />
+                <em>End</em> implementationName <em> ;</em>
+            </p>
+            Dans la partie déclarative, on va définir les signaux supplémentaires <br />
+            ajouter des composants externes ou définir des constantes <br />
+            <em> Attention : les signaux déclarés comme output ne peuvent pas être lu, il faut parfois rajouter des signaux </em> <br />
+            Commandes de base : <br />
+            <dl>
+                <dt> <em> Signal </em> nomSignal <em> : </em> typeSignal <em>;</em> </dt>
+                <dd> définir un signal </dd>
+                <dt> <em> Constant </em> constantName <em> : </em> typeSignal <em> := </em> valeur <em>;</em> </dt>
+                <dd> définir une constante </dd>
+            </dl>
+            <br />
+            La partie fonctionnelle correspond à la fonctionnalité du composant <br />
+            <em> Tout les instructions sont exécutées en parallèle. </em> <br />
+            Commandes de base :
+            <dl>
+                <dt> <em> -- </em> texte </dt>
+                <dd> commentaire en VHDL  </dd>
+                <dt> <em> XOR </em> texte </dt>
+                <dd> porte logique XOR  </dd>
+                <dt> <em> NOT </em> </dt>
+                <dd> porte logique NOT  </dd>
+                <dt> <em> AND </em> </dt>
+                <dd> porte logique AND </dd>
+                <dt> <em> OR </em> </dt>
+                <dd> porte logique OR  </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les process  </button>
+        <div class="panel">
+            Les process explicites permettent de réaliser les fonctionnalité séquentielles <br />
+            Ils conservent en mémoire l'état du système, état des signaux ... <br />
+            <em> Ils doivent être définis dans la partie fonctionnalité de l'architecture. </em>
+            <p class="code">
+                nomProcess <em> : Process (</em>  listeDeSensitivé <em>)</em> <br />
+                <em> Begin </em> <br />
+                &nbsp; -- functionnalité <br />
+                <em> End process </em> nomProcess <em> ; </em>
+            </p>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les conditions  </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>rising_edge(</em>signalName<em>)</em></dt>
+                <dd> retourne un booléen, vrai si le signal est en rising edge et faux sinon </dd>
+            </dl>
+            <br />
+            Permet d'écrire les conditions d'un bloc de code. Dans un explicit process :
+            <p class="code">
+                <em>if() then </em><br />
+                <br />
+                <em>else</em> <br />
+                <br />
+                <em>end if;</em>
+            </p>
+            Il est possible de combiner plusieurs étages de décision <br />
+            ou switch format :
+            <p class="code">
+                <em>Case</em> signal <em>is</em><br />
+                &nbsp;<em>When</em> signalValue1 <em>=></em> block1<em>;</em> <br />
+                &nbsp;<em>When</em> signalValue2 <em>=></em> block2<em>;</em> <br />
+                &nbsp;<em>When OTHERS =></em> defaultBlock<em>;</em><br />
+                <em>End case;</em>
+            </p>
+            <br />
+            <br />
+            Dans un process combinatoire :
+            <p class="code">
+                signal <em><=</em> valeur1 <em>WHEN</em> condition1 <em>ELSE</em> valeur2 <em>WHEN</em>
+                condition2 <em>ELSE</em> valeurPardéfaut<em>;</em>
+            </p>
+            ou
+            <p class="code">
+                <em>WITH</em> inputSignal <em>SELECT</em> outputSignal <em><=</em> <br />
+                value1 <em>WHEN</em> valeur1DeLInputSignal<em>,</em> <br />
+                valeur2 <em>WHEN</em> valeur3DeLInputSignal<em>,</em> <br />
+                parDefautSinon <em>WHEN OTHERS;</em>
+            </p>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les énumérations </button>
+        <div class="panel">
+            Dans la partie déclarative de l'architecture :
+            <p class="code">
+                <em>Type</em> nomEnumeration <em>is</em> <br />
+                <em>(</em> valeur1, valeur2, valeur3, valeur4, ... <em>);</em>
+            </p>
+            Vhdl va se charger tout seul de créer le code table associé à l'énumération <br />
+            Peut être utile pour une FSM par exemple <br />
+            <br />
+            Pour utiliser les enumération :
+            <dl>
+                <dt> <em>Signal</em> nomSignal <em>:</em> nomEnumeration<em>;</em></dt>
+                <dd> créer un signal du type de l'énumération créé </dd>
+            </dl>
+            <dl>
+                <dt>
+                    signal <em><=</em> valeur1 <em>WHEN</em> signalDeType<em>=</em>valeurEnumeration1 <em>ELSE</em>
+                    valeur <em>WHEN</em> signalDeType<em>=</em>valeurEnumeration2 <em>;</em>
+                </dt>
+                <dd> permet d'assigner une valeur à un signal en fonction de la valeur d'enumération courrante </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Importer des composants externes </button>
+        <div class="panel">
+            Dans la partie déclarative de l'architecture, importer le composant (componentName est le nom de l'entité
+            correspondante) :
+            <p class="code">
+                <em>Component</em> componentName <em>is</em> <br />
+                <em> Port ( </em><br />
+                &nbsp; --recopier la partie port de entity du composant ici <br />
+                <em> ); </em> <br />
+                <em> End component; </em>
+            </p>
+
+            Dans la partie fonctionnelle de l'architecture, souder le composant au reste du circuit :
+            <p class="code">
+                <em>add :</em> componentName <br />
+                <em> Port Map(</em> <br />
+                &nbsp;  portDuComposant1 <em>=></em> signalDuCircuit<em>,</em> <br />
+                &nbsp;  portDuComposant2 <em>=></em> signalDuCircuit <br />
+                <em> ); </em>
+            </p>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> La générécité </button>
+        <div class="panel">
+            Quand on remarque que un composant pourrait être réutilisé, il est intéressant de considérer <br />
+            les paramètres qui viendraient à changer : <br />
+            alors plutôt que de créer une nouvelle architecture pour chaque spécificité, il est possible de changer <br />
+            des paramètres <br />
+            Dans la déclaration de l'entité, ajouter au dessus de la déclaration des entrées/sorties :
+            <p class="code">
+                <em>Generic(</em>genericList<em>);</em>
+            </p>
+            GenericList = VariableName1 <em>:</em> type<em> <em>:=</em> valeur;
+                    </em> VariableName2 <em>:</em> type<em><em>:=</em> valeur;
+                    </em> ... <br />
+            type = <em>Integer</em> pour un nombre, nombre de clock de la clock par exemple <br />
+            <br />
+            <em> Les paramètres sont fixés au moment de l'appel du composant, pas de hardware dynamique lolilol </em> <br />
+            Posibilité de définir les valeurs des génériques dans la liste générique de l'entité <br/> 
+            <br/> 
+            <em> Dans l'architecture utiliser les paramètres </em>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> La simulation </button>
+        <div class="panel">
+            Hello world
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+
+        <script src="../../PATTERN/accordionEffect.js"></script>
+    </section>
+</body>
+</html>

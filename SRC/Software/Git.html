@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Git </title>
+    <link rel="stylesheet" href="../../PATTERN/stylePage.css"/> 
+</head>
+<body>
+    <header>
+        <h1> <span class="git"> Git </span> & <span class="gitHub"> GitHub </span> </h1>
+    </header>
+
+    <section>
+        <button class="accordion">  <span class="symbol"> + </span> Presentation </button>
+        <div class="panel">
+            <p>
+                DVCS, Outil de gestion de version distribué <br />
+                A vu le jour en parallèle au dévellopement de Linux <br/>
+                Installable <a href="https://git-scm.com/downloads"> ici </a> 
+            </p>
+            <dl>
+                <dt> git --version </dt>
+                <dd> visualiser sa version de Git </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Documentation </button>
+        <div class="panel">
+            <a href="https://git-scm.com/book/fr/v2">Lien</a> vers la documentation officielle de git 
+            <dl>
+                <dt> git help </dt>
+                <dd> accéder au manuel des commandes de Git </dd>
+
+                <dt> git help command </dt>
+                <dd> accéder aux informations d'une commande Git </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Configurations initiales </button>
+        <div class="panel">
+            <p>
+                Quelques commandes utiles pour personnaliser son utilisation de Git
+            </p>
+            <dl>
+                <dt> git config --global user.name “username” </dt>
+                <dd> renseigner son nom d'utilisateur, remplacer username par son nom d'utilisateur </dd>
+
+                <dt> git config  --global user.email e-mail  </dt>
+                <dd> renseigner son e-mail, remplacer e-mail par son e-mail </dd>
+            </dl>
+            <dl>
+                <dt> git config --global help.autocorrect </dt>
+                <dd> version 1 d'aide : proposer la commande la plus similaire </dd>
+
+                <dt> git config --global help.autocorrect nombre </dt>
+                <dd> version 2 d'aide : executer la commande la plus similaire au bout de nombre secondes </dd>
+            </dl>
+            <dl>
+                <dt> git config --global alias.abreviation commande </dt>
+                <dd> renseigner a git le choix d'un raccourcis pour une commande </dd>
+            </dl>
+            <dl>
+                <dt> git config --list </dt>
+                <dd> visualiser ses choix </dd>
+            </dl>
+        </div>
+
+
+        <button class="accordion"> <span class="symbol"> + </span> Travailler en local</button>
+        <div class="panel">
+            <dl>
+                <dt> git init </dt>
+                <dd> démarrer l'espace de travail git, à faire une fois pour chaque projet </dd>
+            </dl>
+            <dl>
+                <dt> git add * </dt>
+                <dd> indexer tout les fichiers pour la sauvegarde </dd>
+
+                <dt> git add *.type </dt>
+                <dd> indexer tout les fichiers d'un certain type </dd>
+
+                <dt> git add -i </dt>
+                <dd> indexer tout les fichiers de manière interactive </dd>
+
+                <dt> git commit -m ""</dt>
+                <dd> sauvegarder l'etat courant de tout les fichiers ayant ete ajoute grace a add </dd>
+
+                <dt> git commit -a -m ""</dt>
+                <dd> sauvegarder l'etat courant de tout les fichiers deja sous suivis  </dd>
+
+                <dt> git commit --amend </dt>
+                <dd> apres un premier commit, commande pour le completer ou le renommer </dd>
+            </dl>
+            <dl>
+                <dt> git diff </dt>
+                <dd> visualiser les différences par rapport à la dernière sauvegarde </dd>
+            </dl>
+            <p>
+                Le fichier .gitignore, utile pour ignorer certains type de fichier resultant <br/>
+                des builds de l'ide ...
+            </p>
+            <dl>
+                <dt> cat >> .gitignore contenu</dt>
+                <dd> créer le fichier .gitignore sous mac/linux </dd>
+
+                <dt> echo contenu > .gitignore </dt>
+                <dd> créer le fichier .gitignore sous windows </dd>
+
+                <dt> ajouter des types .type, nom dossier /nomDossier dans le fichier </dt>
+                <dd> tout les types, dossier présent dand le .gitignore, serront ignorés par git </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Historique des sauvegardes </button>
+        <div class="panel">
+            Visualiser l'historique des sauvegardes 
+            <dl>
+                <dt> git log </dt>
+                <dd>
+                    affiche l'historique des sauvegardes, si la liste est trop longue appuyer sur Entre pour
+                    poursuivre ou q pour quitter, peut prendre une liste de paramètres :
+                    <dl>
+                        <dt> --graph </dt>
+                        <dd> afficher l'historique sous la forme d'un arbre </dd>
+                        <dt> -n </dt>
+                        <dd> remplacer n par un nombre pour n'afficher que les n sauvegardes les plus récentes </dd>
+                        <dt> --since=arg </dt>
+                        <dd> n'afficher que les sauvegardes qui date de arg, arg au format Annee-Mois-Jour ou n.weeks,
+                        remplacer n par un nombre </dd>
+                        <dt> -p </dt>
+                        <dd> pour visualiser fichier par fichier les modifications apportés par chaque sauvegarde
+                        en comparaison à la précédente </dd>
+                        <dt> --stat </dt>
+                        <dd> Visualiser des statistiques des sauvegardes, nombre de fichiers modifiés ... </dd>
+                    </dl>
+                </dd>
+            </dl>
+            <p> Revenir en arrière </p>
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+
+                <dt> </dt>
+                <dd> </dd>
+
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les branches </button>
+        <div class="panel">
+            <dl>
+                <dt> git branch </dt>
+                <dd> lister les branches du projet </dd>
+
+                <dt> git branch nomBranche </dt>
+                <dd> créer une nouvelle branche, ayant le même historique que la branche actuelle </dd>
+
+                <dt> git branch -d nomBranch </dt>
+                <dd> supprimer une branche </dd>
+
+                <dt> git log --graph --all </dt>
+                <dd> afficher les différentes commits avec les branches sous une forme graphique </dd>
+            </dl>
+            <dl>
+                <dt> git checkout nomBranche </dt>
+                <dd>
+                    basculer sur une autre branche. Sauvegarder la branche en cour avant de switcher !
+                    Cette commande remet le pointeur sur la branche
+                    souhaité et replace les fichiers du répertoire de travail dans l’état du commit
+                    pointé par la branche en question
+                </dd>
+            </dl>
+            <dl>
+                <dt> git config init.defaultBranch nomBranche </dt>
+                <dd> changer le nom de la branche principale (de base main ou master) </dd>
+            </dl>
+            Fusionner des branches
+            <dl>
+                <dt> git checkout nomBranche</dt>
+                <dd> Etape 1 : se placer sur la branche réceptive </dd>
+
+                <dt> git merge brancheACombiner</dt>
+                <dd> Etape 2 : fusion </dd>
+            </dl>
+            Conflit de fusion
+            <dl>
+                <dt> git status </dt>
+                <dd>
+                    visualiser les fichiers non mergé : unmerged ,
+                    git ajoute des marques de résolution de conflit standards dans les fichiers qui comportent
+                    des conflits
+                </dd>
+
+                <dt> git mergetool </dt>
+                <dd> ouvrir le gestionnaire graphique pour résoudre les conflits </dd>
+                ou 
+                <dt> ouvrir les fichiers et les modifier manuellement </dt>
+                <dd> 1 par 1, faire le tri de ce que l'on veut conserver ou pas </dd>
+                <dt> Resolu lorsque les lignes <<<<<<<, ====== et >>>>>>> de chaque section ont été complètement effacées.</dt>
+                <dd> Après avoir résolu chacune de ces sections dans chaque fichier comportant un conflit, lancez git add  </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Communication avec GitHub </button>
+        <div class="panel">
+            Cloner un projet hébergé sur serveur 
+            <dl>
+                <dt> git clone https://.../nomRepository </dt>
+                <dd> clone le projet se trouvant sur le serveur dans un nouveau dossier avec pour nom le nom du repository
+                    dans l'espace courant </dd>
+                <dt> git clone https://.../nomRepository nomDossier </dt>
+                <dd> meme commande que precedement mais avec choix du nom du dossier </dd>
+            </dl>
+
+            Enregistrer le serveur et visualisation d'information
+            <dl>
+                <dt> git remote -v </dt>
+                <dd> afficher les différents serveurs enregistrés, pour un clonage l'abréviation du serveur est origin </dd>
+
+                <dt> git remote add abreviation url </dt>
+                <dd> ajouter un serveur avec l'abreviation pour y acceder plus vite </dd>
+
+                <dt> git remote show abreviation </dt>
+                <dd> inspecter un serveur distant </dd>
+
+                <dt> git remote rename abreviationInitial abreviationSouhaite</dt>
+                <dd> renommer l'abreviation du serveur </dd>
+
+                <dt> git remote rm abreviation </dt>
+                <dd> supprimer un serveur </dd>
+            </dl>
+
+            Communiquer avec le serveur
+            <dl>
+                <dt> git fetch abreviation </dt>
+                <dd> recuperer le contenu du serveur, mais dans une autre branche crée pour l'occasion </dd>
+
+                <dt> git pull abreviation <dt>
+                <dd> récupérer et fusionner le serveur avec la branche locale du moment </dd>
+
+                <dt> git push abreviation branche </dt>
+                <dd> envoi vers le serveur sur la branche branche, le resultat de sa branche actuelle </dd>
+
+                <dt> </dt>
+                <dd> </dd>
+
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Outils supplementaires </button>
+        <div class="panel">
+            Hello world
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <script src="../../PATTERN/accordionEffect.js"> </script>
+    </section>
+</body>
+</html>

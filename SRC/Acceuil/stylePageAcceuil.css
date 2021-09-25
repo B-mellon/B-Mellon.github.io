@@ -1,0 +1,144 @@
+﻿@font-face{
+    font-family : 'handwritten';
+    src : url('../POLICES/ReenieBeanie.ttf');
+}
+
+@font-face {
+    font-family: 'offwhite';
+    src: url('../../POLICES/CutiveMono.ttf');
+}
+
+@font-face {
+    font-family: 'barcode';
+    src: url('../../POLICES/LibreBarcode39.ttf');
+}
+
+@font-face {
+    font-family: 'barcode++';
+    src: url('../../POLICES/LibreBarcode39Extended.ttf');
+}
+
+body {
+    background-color: rgb(75, 143, 189);
+}
+
+footer {
+    position: fixed;
+    right: 10px;
+    bottom: 0px;
+    font-family: 'offwhite';
+}
+
+h1{
+    text-align : center;
+    font-size : 3em;
+    font-family : 'barcode++';
+}
+
+h2{
+    text-align : center;
+}
+
+/* MENU BAR */
+nav{
+
+}
+
+.menuCategorie {
+    background-color: white;
+    float: left;
+    padding: 3px 5px;
+    text-align: center;
+    font-family: 'offwhite';
+}
+
+.clickable, .menuButton {
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.menuCategorie:hover .menuButton {
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.clickable:hover, .menuButton:hover{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border : 2px solid black;
+    border-radius : 3px;
+}
+
+.contenu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color : rgba(255, 255, 255, 0.8);
+}
+
+.menuCategorie:hover .contenu{ /* Super usefull */
+    display: block;
+}
+
+/* Basic elements */
+a{
+    text-decoration : none;
+    color : inherit;
+}
+
+ul{
+    margin : 0px;
+    padding-left : 0px;
+    list-style-type : none;
+}
+
+li{
+    text-align : left;
+}
+
+/* Contenu de la page d'acceuil */
+.toDo {
+    clear: both;
+    font-family: 'offwhite';
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    background-color: rgb(224, 212, 186);
+}
+
+.toDo ul{
+    padding-left : 20px;
+}
+
+canvas{
+    margin-top : 15px;
+    clear : both;
+    width : 100%;
+    border : 1px solid black;
+    background-color : white;
+}
+
+p{
+    margin-bottom : 0;
+    padding-bottom : 0;
+}
+
+dl{
+    margin-top : 0;
+    padding-top : 0;
+}
+
+dt{
+    margin-top : 0;
+    padding-top : 0;
+}
+
+em{
+    font-weight : bold;
+    font-style : normal;
+    color : blue;
+}

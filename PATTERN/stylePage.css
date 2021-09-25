@@ -1,0 +1,72 @@
+﻿@font-face{
+    font-family : 'offWhite';
+    src : url('../POLICES/CutiveMono.ttf');
+}
+
+@font-face {
+    font-family: 'titre';
+    src: url('../POLICES/ChakraPetch.ttf');
+}
+
+@font-face {
+    font-family: 'code';
+    src: url('../POLICES/Inconsolata.ttf');
+}
+
+@font-face {
+    font-family: 'walter';
+    src: url('../POLICES/WalterTurncoat.ttf');
+}
+
+
+body {
+    font-family: 'offWhite';
+}
+
+header {
+    font-family: 'titre';
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    border : 1px solid black;
+}
+
+
+/* Accordion Effect */
+.accordion{
+    border : none;
+    width : 100%;
+    text-align : left;
+    cursor : pointer;
+    font-family : 'walter';
+    font-size : 1.2em;
+}
+
+.accordion:hover, .active {
+     background-color: rgb(160, 197, 217)
+}
+
+.symbol{
+}
+
+.panel {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+}
+
+/* Panel interior */
+dt, .code {
+    font-family: 'code';
+}
+
+em {
+    color: red;
+    font-style: normal;
+}
