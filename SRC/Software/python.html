@@ -84,6 +84,20 @@
             </dl>
         </div>
 
+        <button class="accordion">  <span class="symbol"> + </span> Ranges </button>
+        <div class="panel">
+            Ranges enable to create a list of ordered numbers 
+            <dl>
+                <dt> range(i1, i2)</dt>
+                <dd> create the sequence of integer numbers from i1 included to i2 excluded </dd>
+                <dt> range(i1, i2, r)</dt>
+                <dd>
+                    same as before, but resulting numbers must be seen as the result of an arithmetic "suite",
+                    i1 + r*n, r can be negative but in such a case i1 should be greater then i2 
+                </dd>
+            </dl>
+        </div>
+
         <button class="accordion"> <span class="symbol"> + </span> Lists and Tuples  </button>
         <div class="panel">
             <dl>
@@ -94,6 +108,12 @@
                     get element at position i of the list,i is grewing up from left to right 0 up to len - 1
                     <em> Using a negative i, will instead start from right to left starting from -1 to -len </em>
                 </dd>
+                <dt> sum(list) </dt>
+                <dd> sum all values in the list </dd>
+                <dt> min(list)</dt>
+                <dd> find min element of the list </dd>
+                <dt> max(list) </dt>
+                <dd> find max element of the list </dd>
                 <dt> element in list </dt>
                 <dd> returns a boolean, either true or false corresponding to the element being in list or na   </dd>
             </dl>
@@ -118,7 +138,7 @@
                 <dt> list2 = [modificationFunction(elem) for elem in liste1 if condition ]</dt>
                 <dd>
                     create a list2 using the list1 : it iterates trough the list1 elements, modify them
-                    and append them to list2 if the condition is satisfied 
+                    and append them to list2 if the condition is satisfied
                 </dd>
             </dl>
 
@@ -175,7 +195,7 @@
                 <dt> def function(arg=defaultValue)</dt>
                 <dd>
                     default value for the arg, if one is not provided
-                    => one can use the function without providing argument value 
+                    => one can use the function without providing argument value
                 </dd>
                 <dt> def function(arg : info) : </dt>
                 <dd>
