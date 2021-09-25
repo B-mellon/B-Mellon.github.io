@@ -20,27 +20,219 @@
             </dl>
         </div>
 
-        <button class="accordion">  <span class="symbol"> + </span> Chapitre I </button>
+        <button class="accordion"> <span class="symbol"> + </span> Numbers and basic operations </button>
         <div class="panel">
-            Hello world
             <dl>
+                <dt> a / b </dt>
+                <dd> division décimale </dd>
+                <dt> a // b </dt>
+                <dd> division entière </dd>
+                <dt> a % b </dt>
+                <dd> modulo </dd>
+                <dt> a ** b </dt>
+                <dd> a at the power b </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Booleans </button>
+        <div class="panel">
+            <dl>
+                <dt> or  </dt>
+                <dd> logic or </dd>
+                <dt> not  </dt>
+                <dd>  logic negation </dd>
+                <dt> and </dt>
+                <dd> logic and </dd>
+                <dt> True </dt>
+                <dd> true </dd>
+                <dt> False </dt>
+                <dd> false </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Type and Casting </button>
+        <div class="panel">
+            <dl>
+                <dt> type(var) </dt>
+                <dd> show the type of the variable </dd>
+            </dl>
+            <dl>
+                <dt> str() </dt>
+                <dd> convert to string </dd>
+                <dt> int() </dt>
+                <dd> convert to integer </dd>
+                <dt> float() </dt>
+                <dd> convert to float </dd>
+                <dt> list() </dt>
+                <dd> convert to list </dd>
+                <dt> tuple() </dt>
+                <dd> convert to tuple </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> String </button>
+        <div class="panel">
+            <dl>
+                <dt> \' \" </dt>
+                <dd> use ' or " as caracter and not as string opener/closer</dd>
+                <dt> string1.split("separation_string2") </dt>
+                <dd> cut the string1 into words when separation_string2 found, result in a list of words </dd>
+                <dt> string1.lower() </dt>
+                <dd> transform the string into a new string with majuscule letters been replaced with minuscules</dd>
                 <dt> </dt>
                 <dd> </dd>
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Chapitre II  </button>
+        <button class="accordion"> <span class="symbol"> + </span> Lists and Tuples  </button>
         <div class="panel">
-            Hello world
             <dl>
-                <dt> </dt>
-                <dd> </dd>
+                <dt> len(list)</dt>
+                <dd> get the size of the list </dd>
+                <dt> list[i] </dt>
+                <dd>
+                    get element at position i of the list,i is grewing up from left to right 0 up to len - 1
+                    <em> Using a negative i, will instead start from right to left starting from -1 to -len </em>
+                </dd>
+                <dt> element in list </dt>
+                <dd> returns a boolean, either true or false corresponding to the element being in list or na   </dd>
+            </dl>
+            <dl>
+                <dt> list2 = list1  </dt>
+                <dd> <em>copy the reference</em> of list1 in list2 </dd>
+                <dt> list2 = list1.copy() </dt>
+                <dd> build an independant copy of list1 in list2 </dd>
+                <dt> list2 = list1[index1:index2]</dt>
+                <dd> create the independant sub list liste2, from liste1 </dd>
+                <dt> list2 = list1[index1:]</dt>
+                <dd> same as before but from index1 to the end </dd>
+                <dt> list2 = list1[:index1]</dt>
+                <dd> same as before but from begin to index1 </dd>
+                <dt> list2 = list1[i1:i2:r]</dt>
+                <dd>
+                    same as before, from i1 to i2, but taking only the values at indexes i1 + r*number,
+                    r being "la raison"
+                </dd>
+                <dt> list2.extend(list1)</dt>
+                <dd> add content of list1 to list2 </dd>
+                <dt> list2 = [modificationFunction(elem) for elem in liste1 if condition ]</dt>
+                <dd>
+                    create a list2 using the list1 : it iterates trough the list1 elements, modify them
+                    and append them to list2 if the condition is satisfied 
+                </dd>
+            </dl>
+
+            <dl>
+                <dt> for index, var in enumerate(list1) </dt>
+                <dd>
+                    iterate trough the list : index contain the integer corresponding to current iterator position
+                    and var the value at this position
+                </dd>
+            </dl>
+            Tuple is pretty the same as list but as an immutable object
+            <dl>
+                <dt> tuple1 = (value1, value2, value3)</dt>
+                <dd> create the tuple </dd>
+            </dl>
+            Typecast from list to tuple and reversely is possible !
+            <dl>
+                <dt> tuple()</dt>
+                <dd> typecast to tuple </dd>
+                <dt> list() </dt>
+                <dd> typecast to list </dd>
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Chapitre III  </button>
+        <button class="accordion"> <span class="symbol"> + </span> Dictionnaries  </button>
         <div class="panel">
-            Hello world
+            <dl>
+                <dt> dic = {key1:value1, key2:value2 ...}</dt>
+                <dd> define the dictionnary </dd>
+                <dt> dic.get(key, default=defaultValue) </dt>
+                <dd> get the value associated to the key (if existing), otherwhise return defaultValue</dd>
+                <dt> dic[newKey] = valueForNewKey </dt>
+                <dd> add a new pair key/value </dd>
+                <dt> dic.keys() </dt>
+                <dd> get all keys </dd>
+                <dt> dic.values() </dt>
+                <dd> get all values </dd>
+                <dt> dic.pop(key) </dt>
+                <dd> remove the key/value </dd>
+            </dl>
+            <em>
+                Dictionnaries can be used as a switch while python doesn't explicitely provide this tool
+                => Store case as key, and function as values
+            </em>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Functions  </button>
+        <div class="panel">
+            <dl>
+                <dt> def function(*args)</dt>
+                <dd> function can take a variable number of input, when arg preceeded by * </dd>
+                <dt> return x1, x2 ... </dt>
+                <dd> and return multiple values as output (tuple format) </dd>
+                <dt> def function(arg=defaultValue)</dt>
+                <dd>
+                    default value for the arg, if one is not provided
+                    => one can use the function without providing argument value 
+                </dd>
+                <dt> def function(arg : info) : </dt>
+                <dd>
+                    provide infos about the argument : explicit desired type or provide a string to explain what
+                    the arg is about
+                    => useful for programming interfaces, but not taken in account during compilation and runtime
+                </dd>
+                <dt> def function() -> info : </dt>
+                <dd>
+                    provide info about the output : type of the output or textual information
+                </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Imports  </button>
+        <div class="panel">
+            <dl>
+                <dt>import module as abreviation </dt>
+                <dd> import a module, and assign to it an abreviation, for later refering to the module </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Matplot Lib  </button>
+        <div class="panel">
+            <dl>
+                <dt> import matplotliv.pyplot as plt </dt>
+                <dd> import the required module </dd>
+                <dt> fig = plt.figure() </dt>
+                <dd> ??? </dd>
+
+                <dt> plt.title("title")</dt>
+                <dd> give a title to the graph </dd>
+                <dt> plt.xlabel("x")</dt>
+                <dd> give a name to the x-axis </dd>
+                <dt> plt.xlabel("y")</dt>
+                <dd> give a name to the y-axis </dd>
+                <dt> plt.legend() </dt>
+                <dd> display a legend box : function names </dd>
+            </dl>
+            We can now, fill up the Graph. <em> Multiple "functions" can be drawn on the same figure. </em><br />
+            The data are in list format
+            <dl>
+                <dt> plt.plot(xValues, xImages, marker="*", color="r", label="functionName")</dt>
+                <dd> draw a line closed graph passing though all the provided points </dd>
+                <dt> plt.scatter(xValues, xImages, marker="*", color="r", label="functionName") </dt>
+                <dd> draw the provided points on the figure </dd>
+            </dl>
+            <dl>
+                <dt> plt.show() </dt>
+                <dd> display the graph</dd>
+                <dt> plt.close(fig) </dt>
+                <dd> ??? </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> RE module  </button>
+        <div class="panel">
             <dl>
                 <dt> </dt>
                 <dd> </dd>
