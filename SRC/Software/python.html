@@ -86,14 +86,14 @@
 
         <button class="accordion">  <span class="symbol"> + </span> Ranges </button>
         <div class="panel">
-            Ranges enable to create a list of ordered numbers 
+            Ranges enable to create a list of ordered numbers
             <dl>
                 <dt> range(i1, i2)</dt>
                 <dd> create the sequence of integer numbers from i1 included to i2 excluded </dd>
                 <dt> range(i1, i2, r)</dt>
                 <dd>
                     same as before, but resulting numbers must be seen as the result of an arithmetic "suite",
-                    i1 + r*n, r can be negative but in such a case i1 should be greater then i2 
+                    i1 + r*n, r can be negative but in such a case i1 should be greater then i2
                 </dd>
             </dl>
         </div>
@@ -248,6 +248,43 @@
                 <dd> display the graph</dd>
                 <dt> plt.close(fig) </dt>
                 <dd> ??? </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Jupyter Notebooks and Conda </button>
+        <div class="panel">
+            Conda is a small version of Anaconda (python distribution with preinstalled libraries and its own
+            package management system : conda), can be downloaded from https://docs.conda.io/en/latest/miniconda.html
+            <dl>
+                <dt> conda </dt>
+                <dd> once installed, conda can be used trough terminal  </dd>
+                <dt> conda install packageName </dt>
+                <dd> use conda to install python packages </dd>
+                <dt> conda update packageName </dt>
+                <dd> update to the last version of the package </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+            Jupyter notebook might be installed using conda, or pip
+            <dl>
+                <dt> jupyter notebook </dt>
+                <dd>
+                    command to run jupyter notebook in current path :
+                    will create a local web server with all files in the directory.
+                    <em> enables to open .ipynb file (jupyter notebooks) </em>
+                </dd>
+                <dt> Ctrl + Enter </dt>
+                <dd> command to run a python cell </dd>
+                <dt> Shift + Enter </dt>
+                <dd> run current python cell and move cursor to next cell </dd>
+                <dt> nouveau -> Python 3 (ipykernel) </dt>
+                <dd> once serveur launched we can create a new python notebook </dd>
             </dl>
         </div>
 
