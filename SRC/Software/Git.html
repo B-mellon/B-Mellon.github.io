@@ -15,8 +15,8 @@
         <div class="panel">
             <p>
                 DVCS, Outil de gestion de version distribué <br />
-                A vu le jour en parallèle au dévellopement de Linux <br/>
-                Installable <a href="https://git-scm.com/downloads"> ici </a> 
+                A vu le jour en parallèle au dévellopement de Linux <br />
+                Installable <a href="https://git-scm.com/downloads"> ici </a>
             </p>
             <dl>
                 <dt> git --version </dt>
@@ -26,7 +26,7 @@
 
         <button class="accordion">  <span class="symbol"> + </span> Documentation </button>
         <div class="panel">
-            <a href="https://git-scm.com/book/fr/v2">Lien</a> vers la documentation officielle de git 
+            <a href="https://git-scm.com/book/fr/v2">Lien</a> vers la documentation officielle de git
             <dl>
                 <dt> git help </dt>
                 <dd> accéder au manuel des commandes de Git </dd>
@@ -96,7 +96,7 @@
                 <dd> visualiser les différences par rapport à la dernière sauvegarde </dd>
             </dl>
             <p>
-                Le fichier .gitignore, utile pour ignorer certains type de fichier resultant <br/>
+                Le fichier .gitignore, utile pour ignorer certains type de fichier resultant <br />
                 des builds de l'ide ...
             </p>
             <dl>
@@ -113,7 +113,7 @@
 
         <button class="accordion"> <span class="symbol"> + </span> Historique des sauvegardes </button>
         <div class="panel">
-            Visualiser l'historique des sauvegardes 
+            Visualiser l'historique des sauvegardes
             <dl>
                 <dt> git log </dt>
                 <dd>
@@ -125,11 +125,15 @@
                         <dt> -n </dt>
                         <dd> remplacer n par un nombre pour n'afficher que les n sauvegardes les plus récentes </dd>
                         <dt> --since=arg </dt>
-                        <dd> n'afficher que les sauvegardes qui date de arg, arg au format Annee-Mois-Jour ou n.weeks,
-                        remplacer n par un nombre </dd>
+                        <dd>
+                            n'afficher que les sauvegardes qui date de arg, arg au format Annee-Mois-Jour ou n.weeks,
+                            remplacer n par un nombre
+                        </dd>
                         <dt> -p </dt>
-                        <dd> pour visualiser fichier par fichier les modifications apportés par chaque sauvegarde
-                        en comparaison à la précédente </dd>
+                        <dd>
+                            pour visualiser fichier par fichier les modifications apportés par chaque sauvegarde
+                            en comparaison à la précédente
+                        </dd>
                         <dt> --stat </dt>
                         <dd> Visualiser des statistiques des sauvegardes, nombre de fichiers modifiés ... </dd>
                     </dl>
@@ -195,21 +199,23 @@
 
                 <dt> git mergetool </dt>
                 <dd> ouvrir le gestionnaire graphique pour résoudre les conflits </dd>
-                ou 
+                ou
                 <dt> ouvrir les fichiers et les modifier manuellement </dt>
                 <dd> 1 par 1, faire le tri de ce que l'on veut conserver ou pas </dd>
-                <dt> Resolu lorsque les lignes <<<<<<<, ====== et >>>>>>> de chaque section ont été complètement effacées.</dt>
+                <dt> Resolu lorsque les lignes <<<<<<<, = = = = = =et>>>>>>> de chaque section ont été complètement effacées.</dt>
                 <dd> Après avoir résolu chacune de ces sections dans chaque fichier comportant un conflit, lancez git add  </dd>
             </dl>
         </div>
 
         <button class="accordion">  <span class="symbol"> + </span> Communication avec GitHub </button>
         <div class="panel">
-            Cloner un projet hébergé sur serveur 
+            Cloner un projet hébergé sur serveur
             <dl>
                 <dt> git clone https://.../nomRepository </dt>
-                <dd> clone le projet se trouvant sur le serveur dans un nouveau dossier avec pour nom le nom du repository
-                    dans l'espace courant </dd>
+                <dd>
+                    clone le projet se trouvant sur le serveur dans un nouveau dossier avec pour nom le nom du repository
+                    dans l'espace courant
+                </dd>
                 <dt> git clone https://.../nomRepository nomDossier </dt>
                 <dd> meme commande que precedement mais avec choix du nom du dossier </dd>
             </dl>
@@ -237,7 +243,8 @@
                 <dt> git fetch abreviation </dt>
                 <dd> recuperer le contenu du serveur, mais dans une autre branche crée pour l'occasion </dd>
 
-                <dt> git pull abreviation <dt>
+                <dt> git pull abreviation
+                <dt>
                 <dd> récupérer et fusionner le serveur avec la branche locale du moment </dd>
 
                 <dt> git push abreviation branche </dt>
@@ -251,6 +258,17 @@
             </dl>
         </div>
 
+        <button class="accordion">  <span class="symbol"> + </span> Les clés SSH  </button>
+        <div class="panel">
+            Pour pouvoir communiquer avec gitHub, il n'est plus possible de passer <br/>
+            par la communication https => ssh communication avec cle <br/>
+            Comment generer les clés et les utiliser ? 
+            <dl>
+                <dt> ssh-keygen -t ed25519 </dt>
+                <dd> lancer le protocol de generation de cle ssh </dd>
+            </dl>
+        </div>
+
         <button class="accordion">  <span class="symbol"> + </span> Outils supplementaires </button>
         <div class="panel">
             Hello world
@@ -260,7 +278,7 @@
             </dl>
         </div>
 
-        <script src="../../PATTERN/accordionEffect.js"> </script>
+        <script src="../../PATTERN/accordionEffect.js"></script>
     </section>
 </body>
 </html>
