@@ -107,9 +107,19 @@
                 <dd> renvoi un booléen, bigger then or equals </dd>
                 <dt> <em><</em> </dt>
                 <dd> envoi un booléen, smaller then</dd>
-                <dt> <em>=<</em> </dt>
+                <dt> <em><=</em> </dt>
                 <dd> renvoi un booléen, smaller then or equals </dd>
             </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les variables </button>
+        <div class="panel">
+
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Les arrays </button>
+        <div class="panel">
+
         </div>
 
 
@@ -294,7 +304,7 @@
 
         <button class="accordion"> <span class="symbol"> + </span> La simulation </button>
         <div class="panel">
-            Pour pouvoir réaliser une simulation il faut utiliser le logiciel modelsim 
+            Pour pouvoir réaliser une simulation il faut utiliser le logiciel modelsim
             <ul>
                 <li>
                     On commence par créer un projet en local : dossier contenant deux sous-dossiers modelsim et vhdl
@@ -312,14 +322,14 @@
                     avec le lien du fichier modelsim (contiendra tout les builds modelsim par la suite)
                 </li>
                 <li>
-                    Importer les fichiers hardware VHDL : Add existing file  
+                    Importer les fichiers hardware VHDL : Add existing file
                 </li>
                 <li>
                     Compiler tout les fichiers avec l'icon de compilation (appuyer plusieurs fois si nécessaire,
                     afin que modelsim s'approprie l'ordre des fichiers)
                 </li>
             </ul>
-            Une fois le setup fait on peut passer à la simulation <br/>
+            Une fois le setup fait on peut passer à la simulation <br />
             Wave shortcuts :
             <dl>
                 <dt> F </dt>
@@ -339,14 +349,14 @@
             Comment fonctionne un test ? un test est la simulation d'une entité de test qui utilise l'entité à tester
             avec la possibilité d'injecter des inputs choisis afin d'en vérifier les outputs <br />
             <br />
-            => Choisir un set de cas choisis à vérifier (pas exhaustif : cas limites, cas connus ...) <br/> 
-            <br /> 
+            => Choisir un set de cas choisis à vérifier (pas exhaustif : cas limites, cas connus ...) <br />
+            <br />
             Le test se réalise sous la forme d'une black box view testing <br />
             <br />
             <em> Un code vhd ne compile pas si il ne contient pas une definition d'entité : </em>
             <dl>
                 <dt>
-                   ...  
+                    ...
                 </dt>
                 <dd> importer les librairies pour les signaux et la gestion du temps </dd>
                 <dt>
@@ -357,9 +367,9 @@
             </dl>
             <dl>
                 <dt>
-                    architecture implementation of testComponentToTestName is <br/>
-                    ... <br/>
-                    end architecture implementation; 
+                    architecture implementation of testComponentToTestName is <br />
+                    ... <br />
+                    end architecture implementation;
                 </dt>
                 <dd> décrire la fonctionnalité des tests </dd>
             </dl>
@@ -377,25 +387,25 @@
                     &nbsp; port map( ); <br />
                 </dt>
                 <dd>
-                    importer l'entité à tester, instentier les parametres generique
+                    importer l'entité à tester, instancier les paramètres generiques
                     si necessaire et la relier au circuit de test
                 </dd>
             </dl>
-            On va utiliser des explicit process pour tester l'entité, <em> l'horloge et les test en parallèle </em>  <br/>
-            <em> Les explicit process, ont besoin d'une sensitive list ou d'une notion de temps pour fonctionner ! </em>  
+            On va utiliser des explicit process pour tester l'entité, <em> l'horloge et les test en parallèle </em>  <br />
+            <em> Les explicit process, ont besoin d'une sensitive list ou d'une notion de temps pour fonctionner ! </em>
             <dl>
                 <dt>
-                    sim : process <br/> 
-                    procedure check_add(args) is <br/> 
-                    
-                    begin
-
-                    end procedure check_add;
-                    begin
-                    use the procedure
-                    wait;
-                    end process sim;
-
+                    sim : process <br />
+                    <br />
+                    procedure check_add(args) is <br />
+                    begin <br />
+                    end procedure check_add; <br />
+                    <br />
+                    begin<br />
+                    use the procedure<br />
+                    wait;<br />
+                    <br />
+                    end process sim;<br />
                 </dt>
                 <dd> Process de test </dd>
 
@@ -417,13 +427,13 @@
             => solution les <em> report </em> avec des <em>severity level</em> (<em>warning, error, note, failure</em>)
             <dl>
                 <dt>
-                    <em> assert </em> resultatBooleen ou expression résultant en un booléen <br/>
-                    <em> report </em> "textual indication" <br/> 
+                    <em> assert </em> resultatBooleen ou expression résultant en un booléen <br />
+                    <em> report </em> "textual indication" <br />
                     <em> severity </em> severityLevel <em>;</em>
                 </dt>
                 <dd>
-                    affiche le message dans la console si le booleen est faux, en double cliquant sur le message <br/>
-                    on peut visualiser le moment ou la situation provoquant l'erreur est apparu sur le graph Wave 
+                    affiche le message dans la console si le booleen est faux, en double cliquant sur le message <br />
+                    on peut visualiser le moment ou la situation provoquant l'erreur est apparu sur le graph Wave
                 </dd>
                 <dt> </dt>
                 <dd> </dd>
@@ -438,9 +448,11 @@
                 <dd> ajouter le graph </dd>
                 <dt> restart -f; <em> run -all; </em></dt>
                 <dd>
-                    dans le shell modelsim lancer la simulation, attention <em>n'utiliser le all que pour des
-                    process qui se terminent (attendent indéfiniment avec wait) </em>, modelsim va alors évaluer
-                    la période de simulation nécessaire automatiquement, plus propre et pratique que run timeChoice; 
+                    dans le shell modelsim lancer la simulation, attention <em>
+                        n'utiliser le all que pour des
+                        process qui se terminent (attendent indéfiniment avec wait)
+                    </em>, modelsim va alors évaluer
+                    la période de simulation nécessaire automatiquement, plus propre et pratique que run timeChoice;
                 </dd>
             </dl>
         </div>
