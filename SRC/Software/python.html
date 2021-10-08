@@ -343,10 +343,18 @@
                 <dd> apply the boolean Mask</dd>
             </dl>
             <dl>
-                <dt> </dt>
-                <dd> </dd>
-                <dt> </dt>
-                <dd> </dd>
+                <dt> np.<em>concatenate</em>(<em>[</em>npArray1, npArray2 ...<em>]</em>, <em>axis=</em>0)</dt>
+                <dd>
+                    for <em>concatenation</em> (idée : plusieurs ensemble -> ensemble "indissociable", goutte d'eau ensemble),
+                    the npArrays must have the same shape along the
+                    dimensions except the one along which we concatenate (ex (4, 7) & (4, 3)
+                    is valid amoung concatenation under rowAxis)
+                </dd>
+                <dt> np.<em>stack</em>([npArray1, npArray2 ...], <em>axis=</em>0)</dt>
+                <dd>
+                    for <em>stacking</em> the npArrays must have the exact same dimensions
+                    (idée : juxtaposition dimensionnelle, fondent un ensemble mais individu distinguable, foule d'humain)
+                </dd>
             </dl>
             <dl>
                 <dt> </dt>
