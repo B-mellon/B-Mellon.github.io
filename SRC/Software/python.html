@@ -220,6 +220,7 @@
 
         <button class="accordion"> <span class="symbol"> + </span> Matplot Lib  </button>
         <div class="panel">
+            a Graph drawing library 
             <dl>
                 <dt> import matplotliv.pyplot as plt </dt>
                 <dd> import the required module </dd>
@@ -251,6 +252,127 @@
             </dl>
         </div>
 
+        <button class="accordion"> <span class="symbol"> + </span> Numpy </button>
+        <div class="panel">
+            A matrix/vector scientific computating library <br />
+            The <a href="https://numpy.org/doc/stable/reference/">numpy reference</a> <br />
+            <dl>
+                <dt> import numpy as nb </dt>
+                <dd> import numpy to latter work with </dd>
+            </dl>
+            <dl>
+                <dt> np.<em>array</em>(list or tuple)</dt>
+                <dd> create an np array from an existing python list or tuple (can be multidimensional)</dd>
+            </dl>
+            <dl>
+                <dt> np.<em>zeros</em>(rowSize, columnSize)</dt>
+                <dd> create the nul 0 matrix of size rowSize * columnSize </dd>
+                <dt> np.<em>ones</em>((matrixNumber, rowSize, columnSize))</dt>
+                <dd> create matrixNumber rowSize*columnSize-sized-matrix full of 1</dd>
+                <dt> np.<em>full</em>(format, value)</dt>
+                <dd> create a matrix/list with selected format and desired value to fill up everything</dd>
+                <dt> np.<em>eye</em>(size)</dt>
+                <dd> create the identity matrix of size : size * size </dd>
+                <dt> np.<em>ones_like</em>(x_zeros)</dt>
+                <dd> takes a 0 matrix, do a copy of it and modify all 0 in 1 </dd>
+            </dl>
+            <dl>
+                <dt> np.<em>arange</em>(index1, index2)</dt>
+                <dd> create a sequence of numbers from index1 included to index2 excluded</dd>
+                <dt> np.array([1, 2, 3, 4, 5], <em>dtype=</em>np.int32) </dt>
+                <dd> give an <a href="https://numpy.org/doc/stable/user/basics.types.html">interpretation</a> to the data of the array </dd>
+                <dt> npArray.<em>astype</em>(np.float32)</dt>
+                <dd> give an interpretation after creation </dd>
+            </dl>
+            <dl>
+                <dt> npArray.<em>dtype</em></dt>
+                <dd> view the data type contained in the np array </dd>
+                <dt> npArray.<em>ndim</em></dt>
+                <dd> view the number of dimension of the array</dd>
+                <dt> npArray.<em>size</em></dt>
+                <dd> view number of element in the array</dd>
+                <dt> npArray.<em>shape</em></dt>
+                <dd> view the composition of the array (matrix / table of tables ... )</dd>
+                <dt> npArray.<em>prod</em>(axisNumber)</dt>
+                <dd> return the product of the element over a given axis (axisNumber can be a tuple)</dd>
+            </dl>
+            <em>
+                Reshape an array : the reshaped array has to have the exact same number element as the previous
+                unmodified one
+            </em>
+            <dl>
+                <dt> npArray.<em>reshape</em>(axis1, axis2, axis3 ...)</dt>
+                <dd>
+                    reshape the array to desired configurations (go to matrix, single vector ...), for one axis we can
+                    use <em>-1</em> so that the axis will selfly compute how many element to put per this axis
+                </dd>
+                <dt> np.<em>newaxis</em></dt>
+                <dd> create a new empty axis, useful for reshaping</dd>
+            </dl>
+            <dl>
+                <dt> npArray<em>[</em>index1<em>,</em> index2:index3<em>,</em> index4 ...<em>]</em></dt>
+                <dd>
+                    access the element the same way as python list, just consider the fact its an n dimensional
+                    one : so use , to separate index (index1 select the matrix, index2 select the rows,
+                    index3 select columns ...), <em>when selecting ranges index1 inclusive, index2 exclusive</em>
+                </dd>
+                <dt> npArray[<em>-</em>index1,<em>-</em>index2:index3,<em>-</em>index4 ...]</dt>
+                <dd>
+                    as for python list it is possible to use negative index to start from the end
+                </dd>
+                <dt> npArray[index1Axis1, [index1Axis2, index2Axis2 ...]]</dt>
+                <dd> it is possible to provide a list of index, in result there is a new npArray </dd>
+                <dt> npArray[position] <em>=</em> value </dt>
+                <dd> it is possible to replace the value at a certain place of the np array </dd>
+            </dl>
+            <dl>
+                <dt> mask = np.zeros(format, <em>dtype=np.bool</em>) </dt>
+                <dd>
+                    we can use a boolean mask(<em> it has to have same size as npArray</em>) to index on npArrays,
+                    idea : access to the elements that satisfies a certain condition, (here mask initialization)
+                </dd>
+                <dt> npArray[mask]</dt>
+                <dd> apply the mask,  the mask <em>can be used in combination with basic indexing</em> </dd>
+                <dt> mask = <em>f(</em>npArray<em>)</em> </dt>
+                <dd>
+                    mask can be expressed as a boolean function/on the element of the npArray,
+                    the element are designed by the the npArray : npArray > 3 will design
+                    each element one by one
+                </dd>
+                <dt> npArray[mask]</dt>
+                <dd> apply the boolean Mask</dd>
+            </dl>
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
         <button class="accordion">  <span class="symbol"> + </span> Jupyter Notebooks and Conda </button>
         <div class="panel">
             Conda is a small version of Anaconda (python distribution with preinstalled libraries and its own
