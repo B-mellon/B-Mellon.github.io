@@ -36,6 +36,11 @@
                 <dt> <em>std_logic_vector(</em> N-1 <em>downto</em> 0 <em>)</em></dt>
                 <dd> qui correspond à un bus de N bits, remplacer N-1 par un nombre</dd>
             </dl>
+            Etats intéressant : <br/>
+            <em>Un signal à l'état 'Z' est "transparent" (high impedance)</em>, on peut alors relier deux signaux au
+            même signal en alternant la valeur des signaux à Z...Z consécutivement (dans le cas d'états complémentaires)
+            <br/>
+            <br/>
             Actions pour les std_logic :
             <dl>
                 <dt> signalSimple <em>  <= </em> valeur <em> ; </em></dt>
@@ -114,12 +119,31 @@
 
         <button class="accordion"> <span class="symbol"> + </span> Les variables </button>
         <div class="panel">
-
+            Une variable n'est <em>accessible que depuis son process</em> mais est modifiée immédiatement contrairement
+            à un signal <br />
+            Permet de réaliser une modification progressive de la valeur au cour d'un process
+            <dl>
+                <dt> <em>variable</em> v : type; </dt>
+                <dd> dans la partie déclarative du process </dd>
+            </dl>
+            Utiliser <em>:=</em> pour affecter une nouvelle valeur, cependant même manière d'accès à des
+            bits spécifiques que les signaux
         </div>
 
         <button class="accordion"> <span class="symbol"> + </span> Les arrays </button>
         <div class="panel">
-
+            Permet de regrouper un certain nombre de donnée du même type sous la forme d'un tableau
+            <dl>
+                <dt> <em>type</em> arrayContenantUnType <em>is array(</em>0 <em>to</em> size-1<em>) of</em> type ;</dt>
+                <dd> Pour utiliser une array, il faut commencer par en définir la taille et le type du contenu </dd>
+                <dt> Signal arraySignal : arrayContenantUnType; </dt>
+                <dd> on peut ensuite utiliser le type créé précédement pour définir des tableaux </dd>
+                <dt> arraySignal(index) </dt>
+                <dd>
+                    accès à une ligne du tableau via l'index, <em>l'index doit toujours être un entier</em>,
+                    utiliser <em>to_integer()</em> si nécessaire 
+                </dd>
+            </dl>
         </div>
 
 
@@ -233,6 +257,17 @@
             </p>
         </div>
 
+        <button class="accordion"> <span class="symbol"> + </span> La boucle for </button>
+        <div class="panel">
+            Boucle fort en VHDL, <em>à utiliser dans un explicit process</em>
+            <p class="code">
+                <em>for i in</em> range <em>loop</em> <br />
+                ... do something <br />
+                <em>end loop;</em>
+            </p>
+            range (étendue discrète de nombre) peut par exemple être : 0 <em>to</em> 4, entiers de 0 <em>inclu</em> à 4 <em>inclu</em>
+        </div>
+
         <button class="accordion"> <span class="symbol"> + </span> Les énumérations </button>
         <div class="panel">
             Dans la partie déclarative de l'architecture :
@@ -279,7 +314,7 @@
             </p>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> La générécité </button>
+        <button class="accordion"> <span class="symbol"> + </span> La généricité </button>
         <div class="panel">
             Quand on remarque que un composant pourrait être réutilisé, il est intéressant de considérer <br />
             les paramètres qui viendraient à changer : <br />
