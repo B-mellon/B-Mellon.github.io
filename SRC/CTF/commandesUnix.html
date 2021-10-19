@@ -13,14 +13,22 @@
     <section>
         <button class="accordion">  <span class="symbol"> + </span> Introduction </button>
         <div class="panel">
-            Hello world
+            Documentation of a command can be founded by typing
             <dl>
-                <dt> </dt>
+                <dt> man commandName </dt>
                 <dd> </dd>
             </dl>
         </div>
 
-        <button class="accordion">  <span class="symbol"> + </span> Utilisation netcat </button>
+        <button class="accordion"> <span class="symbol"> + </span> Ressources </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>grep</em> "string" fileName </dt>
+                <dd> will search for every line containing the string in the given file </dd>
+            </dl>
+        </div>
+
+        <button class="accordion">  <span class="symbol"> + </span> Netcat </button>
         <div class="panel">
             <dl>
                 <dt> nc ipAdress port </dt>
@@ -30,14 +38,28 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Commandes network </button>
+        <button class="accordion"> <span class="symbol"> + </span> Basic networking tools </button>
         <div class="panel">
 
             <dl>
-                <dt> </dt>
-                <dd> </dd>
-                <dt> </dt>
-                <dd> </dd>
+                <dt> ifconfig </dt>
+                <dd> lists a computer's network interfaces </dd>
+                <dt> host DNSname</dt>
+                <dd> gives the IP address for a given DNS name </dd>
+                <dt> ping target </dt>
+                <dd>
+                    helps to check if a remote computer is reachable from your computer, with target being
+                    a dns name or ip address
+                </dd>
+                <dt> traceroute target </dt>
+                <dd> lists the routers that are located between my computer and the target (dns or ip)</dd>
+                <dt> cat /etc/services </dt>
+                <dd>
+                    list all ports and special assigned processes (names beside the port numbers are people
+                    who invented a certain protocol, usage of a certain port ...)
+                </dd>
+                <dt> netsat -t </dt>
+                <dd> displays the active communication between your computer and remote ones </dd>
                 <dt> </dt>
                 <dd> </dd>
                 <dt> </dt>
@@ -47,23 +69,23 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Chapitre III  </button>
+        <button class="accordion"> <span class="symbol"> + </span> SSH - Remote connection  </button>
         <div class="panel">
-            Hello world
+            SSH enables secure communication channel between your computer and a remote one
             <dl>
-                <dt> </dt>
-                <dd> </dd>
+                <dt> ssh username@target </dt>
+                <dd> connect to a remote target (either LAN ip or other network ip) </dd>
+                <dt> exit </dt>
+                <dd> command to leave remote connection </dd>
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Ressources </button>
+        <button class="accordion"> <span class="symbol"> + </span> Wireshark  </button>
         <div class="panel">
-            Hello world
-            <dl>
-                <dt> </dt>
-                <dd> </dd>
-            </dl>
+            Wireshark is an application that enables to look inside Internet packages 
         </div>
+
+
 
         <script src="../../PATTERN/accordionEffect.js"></script>
     </section>
