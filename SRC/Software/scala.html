@@ -13,13 +13,238 @@
     <section>
         <button class="accordion">  <span class="symbol"> + </span> Introduction </button>
         <div class="panel">
+            Scala is delivered with the <em>REPL (Read Eval Print Loop)</em> to write expressions and to be output in
+            the terminal (like the jshell Java)
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Define Values </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>def</em> valName <em>=</em> value </dt>
+                <dd> def stores an expression,right hand side avaluated on each use </dd>
+                <dt> <em>def</em> loop <em>:</em> ChooseAType <em>=</em> loop </dt>
+                <dd> infinite loop at evaluation, evaluates itself in loops </dd>
+                <dt> <em>val</em> valName <em>=</em> value </dt>
+                <dd> val stores a value, value evaluated right hand sided at the point of declaration </dd>
+            </dl>
+            <em> Scala Primitive Types : </em>
+            <ul>
+                <li> Int </li>
+                <li> Long </li>
+                <li> Float </li>
+                <li> Double </li>
+                <li> Char </li>
+                <li> Short </li>
+                <li> Byte </li>
+                <li> Boolean </li>
+            </ul>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Functions </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>def</em> function<em>(</em>arg1<em>:</em>Type1<em>,</em> arg2<em>:</em>Type2 ...<em>):</em> ReturnType <em>=</em> expression </dt>
+                <dd> basic function definition </dd>
+            </dl>
+            Scala uses call by value subsitution/evaluation method for function. But if needed, an argument can be passed
+            by name using <em>=></em> before the type declaration, arg :<em>=></em>Type <br />
+            <br />
+            <em>Recursive functions needs an explicit return type in scala, while it is optional for non recursive ones</em> <br />
+            <br />
+            <br />
+            We can put auxilliary functions inside a function to avoid "name-space pollution"
+            <p class="code">
+                def function(arg1 : Type1, arg2 : Type2 ...) : ReturnType = {<br />
+                &nbsp; def subFunction() = ... <br />
+                &nbsp; def subFunction2() = ... <br />
+                &nbsp; last element of the block <br />
+                }
+            </p>
+            <em> The last element of a block is an expression that defines the block value </em> <br />
+            Brackets are optionnal in Scala 3 <br />
+            Definition inside a block shadow definition of the same name that are outside <br />
+            Definition inside the block are only visible within the block <br />
+            <br />
+            <br />
+            In Scala only directly recursive calls to the current function are optimized. For optimization,
+            we declare the function as tail recursive using the annotation <em>@tailrec</em> :
+            <p class="code">
+                <em>import scala.annotation.tailrec </em><br />
+                ... <br />
+                <em>@tailrec</em> <br />
+                def function ...
+            </p>
+            <br />
+            <br />
+            <em> Higher order function </em> are function that takes function as argument or return functions as
+            results
+            <p class="code">
+                def function(f : functionType) = ... <br />
+            </p>
+            FunctionType are of the form A => B, A the argument Type and B the type of return.<br />
+            We can use the provided function by applying it. <br />
+            <br />
+            <br />
+            <dl>
+                <dt>
+                    def function(...)<em>:(arg1f2Type, arg2f2Type ... ) => f2ReturnType</em> = <br />
+                    &nbsp; def f2(arg1f2 : Type1, arg2f2 ... ) = expression <br />
+                    &nbsp; f2
+                </dt>
+                <dd> function that returns a function f2</dd>
+                <dt>
+                    def function(...)<em>(a1 : Type1, a2 : Type2 ...):ReturnTypeOfFunction2</em> = <br />
+                    ...
+                </dt>
+                <dd>
+                    when a function returns a function, we can declare the args and returning type of the resulting
+                    function beside the initial function argument. No need to return, only build an expression
+                    using args from the first declaration and args from the second declaration
+                </dd>
+            </dl>
+            2 ways to use such a function :
+            <dl>
+                <dt>
+                    def function2 = function1(arg1) first <br />
+                    function2(arg2)
+                </dt>
+                <dd> declare the function 2 first and then use it </dd>
+                <dt>
+                    function1(arg1)(arg2)
+                </dt>
+                <dd>
+                    create and use the function 2 directly in chain from function 1
+                </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Anonymous functions </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>(</em>arg1 : Type1, arg2 : Type2 ... <em>) =></em> Expression </dt>
+                <dd> declaration of an anonymous function, type can be ommited if it can be infered </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Strings </button>
+        <div class="panel">
+            <dl>
+                <dt><em>println(</em>string<em>)</em> </dt>
+                <dd> output the string </dd>
+                <dt> <em>s"{</em>variable or expression <em>}</em>complementary text <em>"</em></dt>
+                <dd>
+                    evaluates the value, and empact it textual representation together with the string
+                </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Conditions </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>if</em> condition <em>then</em> expression1 <em>else</em> expression2 </dt>
+                <dd> conditionnal expressions, condition is a Boolean Predicate </dd>
+            </dl>
+            <em> Boolean values and Logic operators : </em>
+            <dl>
+                <dt> true </dt>
+                <dd> </dd>
+                <dt> false </dt>
+                <dd> </dd>
+                <dt> ! </dt>
+                <dd> negation </dd>
+                <dt> && </dt>
+                <dd> and </dd>
+                <dt> || </dt>
+                <dd> or </dd>
+            </dl>
+            <em>&& and || doesn't always need their right operator to be evaluated, "short circuited evaluation"</em>
+            <br />
+            <em> Comparators : </em>
+            <ul>
+                <li> <= </li>
+                <li> >= </li>
+                <li> < </li>
+                <li> > </li>
+                <li> == </li>
+                <li> != </li>
+            </ul>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Classes </button>
+        <div class="panel">
+            Class introduces two entities : a new type and a constructor
+            <p class="code">
+                <em>class</em> ClassName<em>(</em> arg1 : Type1, arg2 : Type2 ... <em>) :</em> <br />
+                &nbsp; def expression1 = ... <br />
+                &nbsp; <em>private</em> val value1 = ... <br />
+                &nbsp; def function() = ... <br />
+                &nbsp; <em>override</em> def <em>toString</em> = ... <br />
+                <em>end</em> ClassName
+            </p>
+            => The end is optionnal but can help to see where the class definition ends <br />
+            => the class can contain members that can either be functions or variables/expressions <br />
+            => The <em> toString</em> method corresponds to the textual reprezentation of the class <br />
+            => Members/ method can be <em> private </em> <br />
+            => To create an instance of a class : def instance = <em>ClassName(</em>args<em>)</em> <br />
+            => We can access class members, by selecting those with infix operator "." : instanceName.memberName <br />
+            => from the inner block of the class, <em>this</em> points the current object <br/>
+            <br/>
+            There exist a primary constructor implicitely introduced by the class (takes param of the constructor
+            and execute all statements of the class body) <br/>
+            To create auxiliary constructors : 
+            <p class="code">
+                class ClassName(parameters) : <br/> 
+                &nbsp; def <em>this(</em>args<em>)</em> = <em>this(</em> use the basic constructor <em>)</em>
+            </p>
+            <br/>
+            <br/>
+            Rather then defining all methods belonging to the class in the class itself, we can writte methods in an
+            extension
+            <p class="code">
+                <em>extension(</em>instance : ClassName<em>):</em> <br/>
+                &nbsp;
+                &nbsp; 
+            </p>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span>  Objects and Trait </button>
+        <div class="panel">
             <dl>
                 <dt> </dt>
                 <dd> </dd>
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Ressources </button>
+        <button class="accordion"> <span class="symbol"> + </span> Preconditions and exceptions </button>
+        <div class="panel">
+            <dl>
+                <dt> <em>require(</em>condition, text<em>)</em> </dt>
+                <dd>
+                    throw IllegalArgumentException together with the text if the condition is not satisfied,
+                    used as a precondition checker
+                </dd>
+                <dt> <em>assert(</em>condition<em>)</em> </dt>
+                <dd> throw an exception AssertionError if the condition is not satisfied , used to check code</dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Programms </button>
+        <div class="panel">
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Genericity </button>
+        <div class="panel">
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> + </span> Lists </button>
         <div class="panel">
             <dl>
                 <dt> </dt>
