@@ -1,26 +1,27 @@
 ﻿@font-face{
     font-family : 'offWhite';
-    src : url('../POLICES/CutiveMono.ttf');
+    src : url('../POLICES/Nunito-Light.ttf');
 }
 
 @font-face {
     font-family: 'titre';
-    src: url('../POLICES/ChakraPetch.ttf');
+    src: url('../POLICES/Consolas.ttf');
 }
 
 @font-face {
     font-family: 'code';
-    src: url('../POLICES/Inconsolata.ttf');
+    src: url('../POLICES/JetBrainsMono-Regular.ttf');
 }
 
 @font-face {
     font-family: 'walter';
-    src: url('../POLICES/WalterTurncoat.ttf');
+    src: url('../POLICES/Consolas.ttf');
 }
 
 
 body {
     font-family: 'offWhite';
+    background-color: rgb(35, 45, 60);
 }
 
 header {
@@ -29,12 +30,15 @@ header {
 
 h1 {
     text-align: center;
+    color: white;
 }
 
 section {
     max-width: 1200px;
     margin: auto;
     border : 1px solid black;
+    background-color: rgb(227, 233, 240);
+    /*color: red;*/
 }
 
 
@@ -46,10 +50,12 @@ section {
     cursor : pointer;
     font-family : 'walter';
     font-size : 1.2em;
+    background-color: rgb(75, 85, 100);
+    color: white;
 }
 
 .accordion:hover, .active {
-     background-color: rgb(160, 197, 217)
+     background-color: rgb(155, 175, 200)
 }
 
 .symbol{
@@ -67,6 +73,6 @@ dt, .code {
 }
 
 em {
-    color: red;
+    color: rgb(233, 40, 40);
     font-style: normal;
 }

@@ -9,10 +9,10 @@ for (i = 0; i < accordeon.length; i++) {
         var panel = this.nextElementSibling;
 
         if (shown) {
-            symbol.innerHTML = "-";
+            symbol.innerHTML = "<";
             panel.style.maxHeight = panel.scrollHeight + "px";
         } else {
-            symbol.innerHTML = "+";
+            symbol.innerHTML = ">";
             panel.style.maxHeight = null;
         }
     });

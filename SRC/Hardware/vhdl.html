@@ -11,7 +11,7 @@
     </header>
 
     <section>
-        <button class="accordion">  <span class="symbol"> + </span> Introduction </button>
+        <button class="accordion">  <span class="symbol"> > </span> Introduction </button>
         <div class="panel">
             <em> VHDL : </em> Very high speed integrated circuits Harware Description Language <br />
             Ce language permet de faire de la description de hardware et de la simulation <br />
@@ -22,7 +22,7 @@
             <em>  Attention : VHDL est un language ne faisant pas la différence entre majuscule et minuscule </em>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les signaux  </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les signaux  </button>
         <div class="panel">
             Pour pouvoir utiliser les signaux il faut commencer par importer la librairie correspondante :
             <p class="code">
@@ -74,7 +74,7 @@
             </dl>
         </div>
 
-        <button class="accordion">  <span class="symbol"> + </span> Les nombres </button>
+        <button class="accordion">  <span class="symbol"> > </span> Les nombres </button>
         <div class="panel">
             While std_logic and std_logic_vector have no interpretation, other types exists : <br />
             The numbers <br />
@@ -117,7 +117,7 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les variables </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les variables </button>
         <div class="panel">
             Une variable n'est <em>accessible que depuis son process</em> mais est modifiée immédiatement contrairement
             à un signal <br />
@@ -130,7 +130,7 @@
             bits spécifiques que les signaux
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les arrays </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les arrays </button>
         <div class="panel">
             Permet de regrouper un certain nombre de donnée du même type sous la forme d'un tableau
             <dl>
@@ -147,7 +147,7 @@
         </div>
 
 
-        <button class="accordion">  <span class="symbol"> + </span> L'entité </button>
+        <button class="accordion">  <span class="symbol"> > </span> L'entité </button>
         <div class="panel">
             L'entité est la visualisation extérieur d'un composant, sous le format black box <br />
             composé de ses entrées / sorties avec le monde extérieur et de son nom
@@ -165,7 +165,7 @@
             Le type d'entrée correspond à un type de signal
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> L'architecture  </button>
+        <button class="accordion"> <span class="symbol"> > </span> L'architecture  </button>
         <div class="panel">
             L'architecture correspond à la partie fonctionnelle d'un composant <br />
             Un composant peu avoir différentes architectures/implémentations
@@ -204,7 +204,7 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les process  </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les process  </button>
         <div class="panel">
             Les process explicites permettent de réaliser les fonctionnalité séquentielles <br />
             Ils conservent en mémoire l'état du système, état des signaux ... <br />
@@ -217,7 +217,7 @@
             </p>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les conditions  </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les conditions  </button>
         <div class="panel">
             <dl>
                 <dt> <em>rising_edge(</em>signalName<em>)</em></dt>
@@ -257,7 +257,7 @@
             </p>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> La boucle for </button>
+        <button class="accordion"> <span class="symbol"> > </span> La boucle for </button>
         <div class="panel">
             Boucle fort en VHDL, <em>à utiliser dans un explicit process</em>
             <p class="code">
@@ -268,7 +268,7 @@
             range (étendue discrète de nombre) peut par exemple être : 0 <em>to</em> 4, entiers de 0 <em>inclu</em> à 4 <em>inclu</em>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Les énumérations </button>
+        <button class="accordion"> <span class="symbol"> > </span> Les énumérations </button>
         <div class="panel">
             Dans la partie déclarative de l'architecture :
             <p class="code">
@@ -292,7 +292,7 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Importer des composants externes </button>
+        <button class="accordion"> <span class="symbol"> > </span> Importer des composants externes </button>
         <div class="panel">
             Dans la partie déclarative de l'architecture, importer le composant (componentName est le nom de l'entité
             correspondante) :
@@ -314,7 +314,7 @@
             </p>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> La généricité </button>
+        <button class="accordion"> <span class="symbol"> > </span> La généricité </button>
         <div class="panel">
             Quand on remarque que un composant pourrait être réutilisé, il est intéressant de considérer <br />
             les paramètres qui viendraient à changer : <br />
@@ -337,7 +337,7 @@
             <em> Dans l'architecture utiliser les paramètres </em>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> La simulation </button>
+        <button class="accordion"> <span class="symbol"> > </span> La simulation </button>
         <div class="panel">
             Pour pouvoir réaliser une simulation il faut utiliser le logiciel modelsim
             <ul>
@@ -376,7 +376,7 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> Le test Benching </button>
+        <button class="accordion"> <span class="symbol"> > </span> Le test Benching </button>
         <div class="panel">
             Idée : vérifier qu'une solution hardware se comporte comme souhaitée <br />
             => Créer un dossier testbench dans le projet qui contiendra tout les tests (fichier de type .vhd) <br />
@@ -492,7 +492,7 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> + </span> La compilation vers le hardware (FPGA)</button>
+        <button class="accordion"> <span class="symbol"> > </span> La compilation vers le hardware (FPGA)</button>
         <div class="panel">
             <dl>
                 <dt> </dt>
@@ -500,7 +500,7 @@
             </dl>
         </div>
 
-        <script src="../../PATTERN/accordionEffect.js"></script>
+        <script src="../../PATTERN/effetAccordeon.js"></script>
     </section>
 </body>
 </html>
