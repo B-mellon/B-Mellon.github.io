@@ -13,14 +13,236 @@
     <section>
         <button class="accordion">  <span class="symbol"> > </span> Introduction </button>
         <div class="panel">
-            Hello world
+            Blender est un logiciel gratuit et <b>Open Source</b> de modélisation, animation, simulation et rendu 3D par ordinateur néerlandais créé en 1998 par <b>Ton Roosendaal</b>. <br>
+            C'est un logiciel très complet permettant de créer tous types d'effets visuels 3D et de créer des modèles et environnements aussi bien pour des films d'animation que des jeux vidéo. <br>
+            Sa version <em>3.0</em> date de 2021 et introduit un moteur de rendu plus rapide <em>Cycles X</em> et finalise l'introduction des <em>Nœuds géométriques</em>.
+        </div>
+
+        <button class="accordion">  <span class="symbol"> > </span> Présentation générale </button>
+        <div class="panel">
+            La vue est séparée en plusieurs fenêtres. <br>
+            La fenêtre principale est le <em>Viewport</em> dans lequel se trouve votre scène 3D et dans lequel vous allez manipuler vos éléments. <br>
+            Il s'accompagne de deux fenêtres d'options activables par <b>T</b> et <b>N</b>. <br>
+            En bas se trouve la <em>Timeline</em> sur laquelle nous reviendrons dans la partie <em>Animation</em>. <br>
+            A droite se trouve la hiérarchie entre les éléments de votre scène. <br>
+            En bas de cette fenêtre se trouve les <em>Propriétés</em> séparées en différents onglets. <br>
+            Au dessus de ces 4 fenêtres se trouvent des onglets permettant d'accéder à des vues pour traiter une étape spécifique du processus de création. <br>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Essentiels  </button>
+        <div class="panel">
+            Fonctions principales de Blender, utilisables à plusieurs endroits de l'application
             <dl>
-                <dt> </dt>
-                <dd> </dd>
+                <dt>Touche(s): Shift + A</dt>
+                <dd>pour ajouter un élément</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Maj + D</dt>
+                <dd>pour dupliquer un élément</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): X</dt>
+                <dd>pour supprimer un élément</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): F3</dt>
+                <dd>pour utiliser la barre de recherche</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Tab</dt>
+                <dd>pour switcher en <em>Edit mode</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): I</dt>
+                <dd>pour associer la valeur de la propriété à la frame actuelle de la <em>Timeline</em></dd>
+            </dl>
+
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Caméra </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): Bouton molette</dt>
+                <dd>pour tourner la caméra</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Molette</dt>
+                <dd>pour zoomer</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Maj + bouton molette</dt>
+                <dd>pour bouger la caméra</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Valeur numpad <b>ou</b> / + valeur</dt>
+                <dd>pour avoir des angles fixes</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Alt + B</dt>
+                <dd>pour cacher tous les éléments en dehors d'une zone carrée</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): H</dt>
+                <dd>pour cacher un élément</dd>
+            </dl>
+            <dl>
+                <dt>Bouton(s): Œil et la caméra dans la hiérarchie</dt>
+                <dd>pour cacher un objet respectivement dans le <em>Viewport</em> et dans le <em>Rendu</em></dd>
+            </dl>
+
+
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Modes de sélection </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): Clic gauche</dt>
+                <dd>pour sélectionner un élément</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): C</dt>
+                <dd>pour sélectionner une zone ronde</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): B</dt>
+                <dd>pour sélectionner une zone carrée</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): A</dt>
+                <dd>pour sélectionner tout</dd>
+            </dl>
+
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Viewport </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): G</dt>
+                <dd>pour bouger</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): R</dt>
+                <dd>pour faire pivoter</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): S</dt>
+                <dd>pour changer la taille</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Cliquer sur le bouton de la molette</dt>
+                <dd>pour effectuer une transformation sur un axe précis</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Maj + valeur</dt>
+                <dd>pour appliquer cette valeur à la transformation</dd>
+            </dl>
+            <dl>
+                <dt>Bouton(s): Options en haut à droite du <em>Viewport</em></dt>
+                <dd>pour affecter le <em>curseur 3D</em> (origine du monde)</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Clic droit</dt>
+                <dd>pour utiliser les fonctions associées à l'objet sélectionné:
+                    <ul>
+                        <li> Shade smooth/flat = simuler une surface courbe ou calculer le rendu des faces commes séparées </li>
+                        <li> Convert to mesh = convertir un objet vectoriel en un ensemble fini de points </li>
+                    </ul>
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + P</dt>
+                <dd>pour définir le parent hiérarchique de l'objet</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + A</dt>
+                <dd>pour appliquer position, rotation ou taille</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + J</dt>
+                <dd>pour fusionner des objets</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + L</dt>
+                <dd>pour copier une propriété d'un autre objet</dd>
             </dl>
         </div>
 
-        <button class="accordion">  <span class="symbol"> > </span> Chapitre I </button>
+        <button class="accordion"> <span class="symbol"> > </span> Edit mode </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): &, é, "</dt>
+                <dd>pour changer de types de sélection</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Sélection multiple
+                    <ul>
+                        <li> Laisser appuyer Maj pour sélectionner plusieurs éléments </li>
+                        <li> Laisser appuyer Ctrl pour sélectionner un deuxième élément et tout le chemin entre les deux </li>
+                        <li> Laisser appuyer Alt pour sélectionner un contour </li>
+                    </ul>
+                </dt>
+            </dl>
+            <dl>
+                <dt>Touche(s): E</dt>
+                <dd>pour extruder une face</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): I</dt>
+                <dd>pour encastrer une face</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + R</dt>
+                <dd>pour définir un contour autour de l'objet</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + B</dt>
+                <dd>pour adoucir les bords d'un objet</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): K</dt>
+                <dd>pour découper la surface</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): F</dt>
+                <dd>pour créer une face entre les points</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Alt + M</dt>
+                <dd>pour fusionner des éléments</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Alt + N</dt>
+                <dd>pour recalculer les <em>normals</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): P</dt>
+                <dd>pour séparer les éléments</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): L</dt>
+                <dd>pour sélectionner un sous-objet</dd>
+            </dl>
+
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Rendu </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): Z</dt>
+                <dd>pour activer la roue de sélection</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): F12</dt>
+                <dd>pour faire le rendu de la frame actuelle</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + F12</dt>
+                <dd>pour faire le rendu de la vidéo</dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Modifiers </button>
         <div class="panel">
             Hello world
             <dl>
@@ -29,18 +251,88 @@
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> > </span> Chapitre II  </button>
+        <button class="accordion"> <span class="symbol"> > </span> Sculpture </button>
         <div class="panel">
-            Hello world
+            <dl>
+                <dt>Touche(s): F</dt>
+                <dd>pour choisir la taille de la <em>brosse</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Maj + F</dt>
+                <dd>pour choisir la force de la <em>brosse</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): B</dt>
+                <dd>pour faire un <em>masque</em> (zone non modifiable) avec une zone carrée</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): M</dt>
+                <dd>pour faire un <em>masque</em> en peignant</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Alt + M</dt>
+                <dd>pour supprimer le <em>masque</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Ctrl + I</dt>
+                <dd>pour inverser le <em>masque</em></dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Éditeur d'UVs </button>
+        <div class="panel">
+            <dl>
+                <dt>Touche(s): Ctrl + E</dt>
+                <dd>dans l'Edit mode pour définir les bordures du <em>patron</em></dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): U</dt>
+                <dd>pour calculer le <em>patron</em> de l'objet</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): L</dt>
+                <dd>pour sélectionner une partie entière du <em>patron</em></dd>
+            </dl>
+            <dl>
+                <dt>Bouton(s): (UV tab) > (Export UV layout)</dt>
+                <dd>pour exporter le png du <em>patron</em></dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Peinture de texture </button>
+        <div class="panel">
+            <dl>
+                <dt>Bouton(s): (+ New)</dt>
+                <dd>pour créer une texture vierge</dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Shading </button>
+        <div class="panel">
             <dl>
                 <dt> </dt>
                 <dd> </dd>
             </dl>
         </div>
 
-        <button class="accordion"> <span class="symbol"> > </span> Chapitre III  </button>
+        <button class="accordion"> <span class="symbol"> > </span> Animation </button>
         <div class="panel">
-            Hello world
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Compositing </button>
+        <div class="panel">
+            <dl>
+                <dt> </dt>
+                <dd> </dd>
+            </dl>
+        </div>
+
+        <button class="accordion"> <span class="symbol"> > </span> Nœuds géométriques </button>
+        <div class="panel">
             <dl>
                 <dt> </dt>
                 <dd> </dd>
