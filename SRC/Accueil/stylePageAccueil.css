@@ -82,9 +82,11 @@ nav{
     background-color : rgb(75, 85, 100);
 }
 
-.menuCategorie:hover .contenu{ /* Super usefull */
+
+.menuCategorie:hover .contenu{ 
     display: block;
 }
+
 
 /* Basic elements */
 a{
