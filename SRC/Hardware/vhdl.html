@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/png" href="../../image/favicon2.png">
     <title> MTT-vhdl </title>
-    <link rel="stylesheet" href="../../PATTERN/stylePage.css"/> 
+    <link rel="stylesheet" href="../../PATTERN/stylePage.css"/>
 </head>
 <body>
     <header>
@@ -118,6 +118,24 @@
             </dl>
         </div>
 
+        <button class="accordion"> <span class="symbol"> > </span> Type & Type casting </button>
+        <div class="panel">
+            Les signaux std_logic_vector peuvent être appliqué à un numérique de même taille (en bits) et vice versa <br/>
+            mais doivent subir un "type casting" <br/> 
+            Std_logic_vector vers numerique :
+            <dl>
+              <dt> <em>unsigned(</em>signal<em>)</em> </dt>
+              <dd> typecaster un std_logic_vector en unsigned </dd>
+              <dt> <em>signed(</em>signal<em>)</em> </dt>
+              <dd> typecaster un std_logic_vector en signed </dd>
+            </dl>
+            Numerique vers std_logic_vector :
+            <dl>
+              <dt> <em>std_logic_vector(</em>signal<em>)</em> </dt>
+              <dd> typecaster un numerique en std_logic_vector </dd>
+            </dl>
+        </div>
+
         <button class="accordion"> <span class="symbol"> > </span> Les variables </button>
         <div class="panel">
             Une variable n'est <em>accessible que depuis son process</em> mais est modifiée immédiatement contrairement
@@ -142,7 +160,7 @@
                 <dt> arraySignal(index) </dt>
                 <dd>
                     accès à une ligne du tableau via l'index, <em>l'index doit toujours être un entier</em>,
-                    utiliser <em>to_integer()</em> si nécessaire 
+                    utiliser <em>to_integer()</em> si nécessaire
                 </dd>
             </dl>
         </div>
