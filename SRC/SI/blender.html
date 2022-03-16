@@ -57,6 +57,10 @@
                 <dt>Touche(s): I</dt>
                 <dd>pour associer la valeur de la propriété à la frame actuelle de la <em>Timeline</em></dd>
             </dl>
+            <dl>
+                <dt>Weight paint</dt>
+                <dd>sélectionne une partie des <em>vertex</em> de l'objet et les stocke dans un <em>Vertex group</em></dd>
+            </dl>
 
         </div>
 
@@ -75,20 +79,20 @@
                 <dd>pour bouger la caméra</dd>
             </dl>
             <dl>
-                <dt>Touche(s): Valeur numpad <b>ou</b> / + valeur</dt>
+                <dt>Touche(s): ù + roue de sélection</dt>
                 <dd>pour avoir des angles fixes</dd>
-            </dl>
-            <dl>
-                <dt>Touche(s): Alt + B</dt>
-                <dd>pour cacher tous les éléments en dehors d'une zone carrée</dd>
             </dl>
             <dl>
                 <dt>Touche(s): H</dt>
                 <dd>pour cacher un élément</dd>
             </dl>
             <dl>
+                <dt>Touche(s): Alt + H</dt>
+                <dd>pour réafficher tous les éléments cachés</dd>
+            </dl>
+            <dl>
                 <dt>Bouton(s): Œil et la caméra dans la hiérarchie</dt>
-                <dd>pour cacher un objet respectivement dans le <em>Viewport</em> et dans le <em>Rendu</em></dd>
+                <dd>pour cacher/réafficher un objet respectivement dans le <em>Viewport</em> et dans le <em>Rendu</em></dd>
             </dl>
 
 
@@ -130,7 +134,7 @@
                 <dd>pour changer la taille</dd>
             </dl>
             <dl>
-                <dt>Touche(s): Cliquer sur le bouton de la molette</dt>
+                <dt>Touche(s): Bouton de la molette</dt>
                 <dd>pour effectuer une transformation sur un axe précis</dd>
             </dl>
             <dl>
@@ -149,11 +153,14 @@
                         <li> Convert to mesh = convertir un objet vectoriel en un ensemble fini de points </li>
                     </ul>
                 </dd>
-
             </dl>
             <dl>
                 <dt>Touche(s): Ctrl + P</dt>
                 <dd>pour définir le parent hiérarchique de l'objet</dd>
+            </dl>
+            <dl>
+                <dt>Touche(s): Alt + P</dt>
+                <dd>pour enlever le parent hiérarchique de l'objet</dd>
             </dl>
             <dl>
                 <dt>Touche(s): Ctrl + A</dt>
@@ -165,7 +172,7 @@
             </dl>
             <dl>
                 <dt>Touche(s): Ctrl + L</dt>
-                <dd>pour copier une propriété d'un autre objet</dd>
+                <dd>pour lier une propriété à un autre objet</dd>
             </dl>
         </div>
 
@@ -222,7 +229,7 @@
             </dl>
             <dl>
                 <dt>Touche(s): L</dt>
-                <dd>pour sélectionner un sous-objet</dd>
+                <dd>pour sélectionner un objet entier depuis un vertex</dd>
             </dl>
 
         </div>
@@ -245,11 +252,119 @@
 
         <button class="accordion"> <span class="symbol"> > </span> Modifiers </button>
         <div class="panel">
-            Hello world
             <dl>
-                <dt> </dt>
-                <dd> </dd>
+                <dt>Arrays</dt>
+                <dd>Crée une chaîne d'éléments</dd>
+                <ul>
+                    <li>Count: nombre d'objets dans la chaîne d'éléments</li>
+                    <li>Relative offset: translation par rapport à la taille de l'objet</li>
+                    <li>Constant offset: translation par rapport à une distance donnée</li>
+                    <li>Object offset: translation par rapport à la taille d'un objet externe</li>
+                </ul>
             </dl>
+            <dl>
+                <dt>Bevel</dt>
+                <dd>Adoucit les bords d'un objet</dd>
+                <ul>
+                    <li>Vertices: appliquer <b>bevel</b> sur les angles</li>
+                    <li>Edges: appliquer <b>bevel</b> sur les bords</li>
+                    <li>Amount: largeur du <b>bevel</b></li>
+                    <li>Segments: nombre de sous-divisions du <b>bevel</b></li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Boolean</dt>
+                <dd>Génère le résultat d'une opération booléenne avec un autre objet</dd>
+                <ul>
+                    <li>Intersect: génère l'intersection avec l'objet choisi</li>
+                    <li>Union: génère l'union avec l'objet choisi</li>
+                    <li>Difference: génère la différence avec l'objet choisi</li>
+                    <li>Object: objet avec lequel interagit le <b>booléen</b></li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Decimate</dt>
+                <dd>Réduit le nombre de polygones</dd>
+                <ul>
+                    <li>Ratio: coefficient de réduction du nombre de polygones</li>
+                    <li>Collapse: réduction uniforme du nombre de polygones</li>
+                    <li>Un-Subdivide: réduction du nombre de polygones par association de faces carrées entre elles</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Mirror</dt>
+                <dd>Crée la réflection de l'objet par rapport à un axe</dd>
+                <ul>
+                    <li>Axis: axes sur lesquels opérer la symétrie</li>
+                    <li>Clipping: fusionner les points en communs résultant de l'opération</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Skin</dt>
+                <dd>Crée un tube autour de chaque bord de l'objet</dd>
+                <ul>
+                    <li><b>Ctrl+A →</b> contrôle le diamètre du tube créé (avec le bord sélectionné en <em>Edit mode</em></li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Solidify</dt>
+                <dd>Donne une épaisseur à un plan</dd>
+                <ul>
+                    <li>Thickness: contrôle l'épaisseur créée</li>
+                    <li>Offset: décalage de l'épaisseur créée</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Subdivision Surface</dt>
+                <dd>Augmente la résolution de l'objet</dd>
+                <ul>
+                    <li>Levels Viewport: définit la résolution dans le <em>Viewport</em></li>
+                    <li>Render: définit la résolution dans le <em>Rendu</em></li>
+                    <li>Catmull-Clark: adoucit les bords de l'objet</li>
+                    <li>Simple: conserve la forme de l'objet</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Curve</dt>
+                <dd>Fait suivre une courbe à la forme de l'objet</dd>
+                <ul>
+                    <li>Curve object: courbe à suivre</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Displace</dt>
+                <dd>Déforme l'objet selon une texture</dd>
+                <ul>
+                    <li>Texture: texture à uivre pour la déformation</li>
+                    <li>Strength: force de la déformation</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Hook</dt>
+                <dd>Déforme une partie de l'objet pour suivre un point d'anchrage</dd>
+                <ul>
+                    <li>Object: point d'anchrage à suivre</li>
+                    <li>Vertex group: partie de l'objet à déformer</li>
+                    <li>Strength: force de la déformation</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Shrinkwrap</dt>
+                <dd>Projette l'objet sur la surface d'un autre</dd>
+                <ul>
+                    <li>Wrap Method: méthode de projection</li>
+                    <li>Target: objet sur lequel projeter</li>
+                    <li>Offset: décalage de la projection par rapport à la surface visée</li>
+                </ul>
+            </dl>
+            <dl>
+                <dt>Wave</dt>
+                <dd>Crée une simulation de vagues sur l'objet</dd>
+                <ul>
+                    <li>Motion: axes de progression des vagues</li>
+                </ul>
+            </dl>
+
         </div>
 
         <button class="accordion"> <span class="symbol"> > </span> Sculpture </button>
