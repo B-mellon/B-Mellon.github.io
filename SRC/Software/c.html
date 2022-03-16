@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/png" href="../../image/favicon2.png">
+    <title> MTT-C </title>
+    <link rel="stylesheet" href="../../PATTERN/stylePage.css"/>
+</head>
+<body>
+    <header>
+        <h1> <img src="cLogo.png" width="100" height="100" align="middle"> </h1>
+    </header>
+
+    <section>
+        <button class="accordion">  <span class="symbol"> > </span> Presentation </button>
+        <div class="panel">
+          <dl>
+            <dt> .c </dt>
+            <dd> fichiers sources </dd>
+            <dt> .h </dt>
+            <dd> fichiers d'en tête, descriptif des fonctionnalités offertes (prototype des fonctions, type ...) par le fichier .c associé </dd>
+            <dt> <em> #pragma once </em> </dt>
+            <dd> a utiliser dans chaque fichier .h en en tete </dd>
+            <dt> #include fichier.h </dt>
+            <dd> va copier l'integralite du code .c associé dans le fichier qui fait l'appel <br/>
+                utiliser "fichier.h" si le fichier.h est local sinon < fichier.h > pour un fichier de l'api C </dd>
+          </dl>
+
+        </div>
+
+        <button class="accordion">  <span class="symbol"> > </span> Installation et fonctionnement </button>
+        <div class="panel">
+
+            Une fois le code .c écrit, il doit d'abord être compilé, pour pouvoir ensuite être exécuté
+            Pour la compilation et l'exécution on peut se passe d'un IDE :
+            <dl>
+                <dt> gcc nomFichier.c -o nomPourExecutable </dt>
+                <dd> pour compiler le code .c et en créer un fichier executable </dd>
+                <dt> clang nomFichier.c -o nomPourExecutable </dt>
+                <dd> pour compiler le code .c et en créer un fichier executable sur mac versions supérieures a OSX </dd>
+                <dt> -std=c99 </dt>
+                <dd> option de compilation, pour specifier le type de C employé </dd>
+                <dt> ./nomExecutable </dt>
+                <dd> pour exécuter le code C compilé </dd>
+                <dt> -lm </dt>
+                <dd> a rajouter pendant la compilation pour utiliser la librairie maths </dd>
+            </dl>
+            Compilation avec dépendances :
+            <dl>
+              <dt> gcc -c -o fichier.c fichier.o </dt>
+              <dd> creer le fichier objet associé, sans les liens entre fichier (a faire pour chaque .c dans un premier temps) </dd>
+              <dt> gcc -o nomExecutable liste des fichiers .o requis</dt>
+              <dd> faire les liens entres les différents fichiers, dans un second temps pour obtenir l'executable (bibliothèques standardes liées automatiquement)</dd>
+            </dl>
+            Pour compiler un gros projet, automatisation de la partie ci dessus avec Make <br/>
+            utiliser un fichier MakeFile qui serra appelé par la commande <em> make </em>
+            <dl>
+              <dt> gcc -MM *.c </dt>
+              <dd> va afficher l'integralité des dépendances de chaque fichier .c dans le repertoire courant </dd>
+              <dt> all : executableRealiseParDefaultAlappelDeMake<br/> executableSouhaité : lister tout les .o requis <br/> commande pour realiser la liaison -librarieExternes <br/>
+              ## liste de dépendence : <br/> copier le resultat de gcc -MM et intercaller les commandes pour compiler en objet </dt>
+              <dd> redaction du make file </dd>
+            </dl>
+            <em> Attention : commencer chaque ligne de commande par une tabulation et pas un espace </em>
+        </div>
+
+
+        <button class="accordion">  <span class="symbol"> > </span> Doxygen </button>
+        <div class="panel">
+            Doxygen permet de réaliser la documentation technique pour du code C et C++ <br/>
+            <a href="https://www.doxygen.nl/manual/index.html"> Documentation officielle </a> <br/>
+            <a href="https://franckh.developpez.com/tutoriels/outils/doxygen/"> superbe documentation doxygen </a>
+            <dl>
+                <dt> doxygen -v </dt>
+                <dd>  </dd>
+                <dt> doxygen Doxyfile </dt>
+                <dd> generer la documentation du projet </dd>
+            </dl>
+            Ecrire la documentation du code en entête du programme, entre <em> /**  </em> et <em> */ </em> <br/>
+            ou en commentaire de méthodes, énumeration, structure ... <br/>
+            De nombreuses options sont disponibles pour la documentation :
+            <ul>
+                <li> \date </li>
+                <li> \author </li>
+                <li> \version </li>
+                <li> \brief (pour une courte description) </li>
+                <li> \def (pour une macro ou constante)</li>
+                <li> \param </li>
+                <li> \return </li>
+            </ul>
+        </div>
+
+        <script src="../../PATTERN/effetAccordeon.js"></script>
+    </section>
+</body>
+</html>
