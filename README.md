@@ -10,4 +10,4 @@
 
 ## Contribute 
 
-If you have any Computer Science skills and whant to contribute don't hesitate to contact us to get writting rights 👀
+You have any Computer Science skills and are willing to contribute to the website => don't hesitate to contact us 👀
