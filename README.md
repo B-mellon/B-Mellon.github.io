@@ -1,4 +1,4 @@
-# 🚀 B-Mellon.github.io  ![visitors](https://visitor-badge.glitch.me/badge?page_id=B-mellon.B-Mellon.github.io) 🐼 
+# 🚀 B-Mellon.github.io 🐼 
 
 ## Presentation 
 
