@@ -8,3 +8,4 @@
 
 ## Contribute 
 
+If you have any Computer Science skills and whant to contribute don't hesitate to contact us to get writting rights 👀
