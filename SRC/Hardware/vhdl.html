@@ -234,6 +234,7 @@
                 &nbsp; -- functionnalité <br />
                 <em> End process </em> nomProcess <em> ; </em>
             </p>
+            <em> Attention : les valeurs des signaux ne sont pas updaté directement mais uniquement à la sortie du process </em>
         </div>
 
         <button class="accordion"> <span class="symbol"> > </span> Les conditions  </button>
@@ -260,6 +261,8 @@
                 &nbsp;<em>When OTHERS =></em> defaultBlock<em>;</em><br />
                 <em>End case;</em>
             </p>
+            utiliser <em> null; </em> comme l'execution vide, a utiliser dans un bloc comme others => si ce bloc ne doit rien faire et rendre le compilateur
+            heureux :)   
             <br />
             <br />
             Dans un process combinatoire :
